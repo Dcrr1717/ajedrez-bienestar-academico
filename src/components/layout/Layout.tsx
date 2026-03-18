@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-import { BookOpen, Award, Moon, Sun } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { BookOpen, Award, Moon, Sun, Home } from 'lucide-react';
 import { useProgressStore } from '../../store/useProgressStore';
 import { module1Lessons } from '../../modules/module1/data/lessons';
 import { module2Lessons } from '../../modules/module2/data/lessons';
@@ -11,8 +11,11 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const { completedLessons, currentModule } = useProgressStore();
+  const navigate = useNavigate();
+  const location = useLocation();
   const totalLessons = module1Lessons.length + module2Lessons.length;
   const progressPercent = Math.round((completedLessons.length / totalLessons) * 100) || 0;
+  const isHome = location.pathname === '/';
 
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
@@ -33,8 +36,8 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen w-full bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
       <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        <div className="w-full px-4 md:px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl pb-1">
               ♞
             </div>
@@ -43,17 +46,23 @@ export default function Layout({ children }: LayoutProps) {
             </h1>
           </div>
           
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/module/1" className={`flex items-center gap-2 font-medium transition-colors ${currentModule === 1 ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'}`}>
-              <BookOpen size={18} />
+          <nav className="hidden md:flex items-center gap-1">
+            {!isHome && (
+              <Link to="/" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium text-sm text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-colors">
+                <Home size={16} />
+                <span>Inicio</span>
+              </Link>
+            )}
+            <Link to="/module/1" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 1 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
+              <BookOpen size={16} />
               <span>Módulo 1</span>
             </Link>
-            <Link to="/module/2" className={`flex items-center gap-2 font-medium transition-colors ${currentModule === 2 ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'}`}>
-              <BookOpen size={18} />
+            <Link to="/module/2" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 2 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
+              <BookOpen size={16} />
               <span>Módulo 2</span>
             </Link>
-            <Link to="/module/3" className={`flex items-center gap-2 font-medium transition-colors ${currentModule === 3 ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'}`}>
-              <BookOpen size={18} />
+            <Link to="/module/3" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 3 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
+              <BookOpen size={16} />
               <span>Módulo 3</span>
             </Link>
           </nav>
@@ -74,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </header>
 
-      <main className="flex-1 w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
+      <main className="flex-1 w-full px-4 md:px-6 py-4 md:py-6">
         {children}
       </main>
     </div>
