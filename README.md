@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# ♟️ Ajedrez Bienestar Académico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma web educativa interactiva para aprender ajedrez por módulos progresivos.
 
-Currently, two official plugins are available:
+🔗 **[➡ Abrir Aplicación](https://ajedrez-bienestar-academico.vercel.app)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📚 Módulos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Módulo | Tema | Descripción |
+|--------|------|-------------|
+| 1 | **Conoce las Piezas** | Aprende cómo se mueve cada pieza con un tablero interactivo libre |
+| 2 | **Notación y Conceptos** | Coordenadas, notación algebraica y valor de piezas |
+| 3 | **Juego Libre (PGN)** | Partida completa con historial PGN y retroceso de jugadas |
 
-## Expanding the ESLint configuration
+## ✨ Características
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🖱️ Clic o arrastra piezas para ver movimientos posibles (sombras)
+- 🗺️ Coordenadas a-h / 1-8 visibles permanentemente
+- 🔄 Indicador de turno dinámico (Blancas / Negras)
+- 🔊 Sonido suave al mover piezas
+- 🌙 Modo oscuro / claro
+- 📱 Diseño responsive
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologías
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React 19 + TypeScript + Vite 8
+- Tailwind CSS v4
+- chess.js (lógica de ajedrez)
+- react-chessboard (tablero interactivo)
+- Zustand (estado global)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Desarrollo local
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Despliegue
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+La app está desplegada en **Vercel** — cada push a `main` redespliega automáticamente.
