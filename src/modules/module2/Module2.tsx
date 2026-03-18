@@ -1,0 +1,231 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Chess } from 'chess.js';
+import { Chessboard } from 'react-chessboard';
+import { useProgressStore } from '../../store/useProgressStore';
+import { module2Lessons, type Module2Lesson } from './data/lessons';
+import { CheckCircle2, XCircle, ArrowRight, MousePointerClick, Trophy } from 'lucide-react';
+
+const playMoveSound = () => {
+  try {
+    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.08);
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.12);
+  } catch (e) { /* silent fail */ }
+};
+
+export default function Module2() {
+  const { currentLessonIndex, nextLesson, prevLesson, setCurrentModule, markLessonCompleted, completedLessons } = useProgressStore();
+  const lesson: Module2Lesson = module2Lessons[currentLessonIndex] || module2Lessons[0];
+  const navigate = useNavigate();
+  
+  const [game, setGame] = useState<Chess | null>(null);
+  const [updater, setUpdater] = useState(0);
+  const [feedback, setFeedback] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
+  const [isLessonPass, setIsLessonPass] = useState(false);
+
+  useEffect(() => {
+    setCurrentModule(2);
+  }, [setCurrentModule]);
+
+  useEffect(() => {
+    setGame(new Chess(lesson.initialFen));
+    setFeedback({ type: null, message: '' });
+    setIsLessonPass(completedLessons.includes(lesson.id));
+    setUpdater(0);
+  }, [currentLessonIndex, lesson, completedLessons]);
+
+  if (!lesson || !game) {
+    return <div className="p-8 text-center text-slate-500">Cargando lección del Módulo 2...</div>;
+  }
+
+  function handleSuccess(msg?: string) {
+    setFeedback({ type: 'success', message: msg || lesson.successMessage });
+    setIsLessonPass(true);
+    markLessonCompleted(lesson.id);
+    playMoveSound();
+  }
+
+  function handleError(msg: string) {
+    setFeedback({ type: 'error', message: msg });
+  }
+
+  function onSquareClick(square: string) {
+    if (isLessonPass || lesson.mode !== 'find_square') return;
+    
+    if (square === lesson.targetSquare) {
+      handleSuccess();
+    } else {
+      handleError(`Has hecho clic en la casilla ${square}. Intenta encontrar la casilla ${lesson.targetSquare}.`);
+    }
+  }
+
+  function onDrop(sourceSquare: string, targetSquare: string) {
+    if (isLessonPass || lesson.mode === 'find_square') return false;
+
+    try {
+      const moveResult = game!.move({
+        from: sourceSquare,
+        to: targetSquare,
+        promotion: 'q', 
+      });
+
+      if (moveResult) {
+        if (lesson.mode === 'move_piece') {
+          if (moveResult.san === lesson.targetMove) {
+            handleSuccess();
+          } else {
+            handleError(`Escribiste ${moveResult.san} en el tablero, pero debías jugar ${lesson.targetMove}. Intenta de nuevo.`);
+            // Revert move
+            game!.undo();
+          }
+        } else if (lesson.mode === 'capture_value') {
+          if (moveResult.to === lesson.expectedCapture) {
+            handleSuccess();
+          } else {
+            handleError(`¡Esa no era la mejor captura! Piensa en el valor de las piezas.`);
+            game!.undo();
+          }
+        }
+        setUpdater(u => u + 1);
+        return true;
+      }
+    } catch (e: any) {
+      handleError(`Ese movimiento no está permitido. Intenta de nuevo.`);
+      return false;
+    }
+    return false;
+  }
+
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 md:p-8 flex flex-col md:flex-row gap-8 min-h-[600px] transition-colors duration-300">
+      
+      {/* Panel izquierdo: Teoría e Instrucciones */}
+      <div className="flex-1 flex flex-col gap-6">
+        <div>
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">
+              Módulo 2 - Lección {currentLessonIndex + 1} de {module2Lessons.length}
+            </span>
+            {completedLessons.includes(lesson.id) && (
+              <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+                <CheckCircle2 size={14} /> Completada
+              </span>
+            )}
+          </div>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mt-1 mb-4">{lesson.title}</h2>
+          
+          <div className="prose prose-slate">
+            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+              {lesson.description}
+            </p>
+            <div className="bg-emerald-50 dark:bg-emerald-900/30 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-6 transition-colors">
+              <h3 className="text-emerald-800 font-semibold mb-2 flex items-center gap-2">
+                🎯 Tu Reto
+              </h3>
+              <p className="text-emerald-700 m-0 font-medium pb-2 text-lg">
+                {lesson.instruction}
+              </p>
+              {lesson.mode === 'find_square' && (
+                <div className="flex items-center gap-2 mt-2 text-emerald-800 dark:text-emerald-200 text-sm font-semibold bg-white/60 dark:bg-slate-800/60 p-2 rounded w-max">
+                  <MousePointerClick size={16}/> Haz clic sobre la casilla directamente
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Feedback visual interactivo */}
+        {feedback.type && (
+           <div className={`p-4 rounded-xl border flex items-start gap-3 transition-all animate-in fade-in slide-in-from-bottom-2 ${
+            feedback.type === 'success' 
+              ? 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200' 
+              : 'bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200'
+          }`}>
+            {feedback.type === 'success' ? <CheckCircle2 className="mt-0.5 shrink-0" /> : <XCircle className="mt-0.5 shrink-0" />}
+            <span className="font-medium text-[15px]">{feedback.message}</span>
+          </div>
+        )}
+
+        <div className="mt-auto pt-6 border-t border-slate-100 flex justify-between items-center">
+          <button 
+            onClick={prevLesson}
+            disabled={currentLessonIndex === 0}
+            className="px-5 py-2.5 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-xl transition-colors disabled:opacity-30 disabled:hover:bg-transparent"
+          >
+            Anterior
+          </button>
+          
+          {currentLessonIndex < module2Lessons.length - 1 ? (
+            <button 
+              onClick={() => nextLesson(module2Lessons.length)}
+              disabled={(!isLessonPass && !completedLessons.includes(lesson.id))}
+              className="flex items-center gap-2 px-6 py-2.5 bg-emerald-600 text-white font-medium rounded-xl shadow-sm hover:bg-emerald-700 hover:shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Siguiente Lección <ArrowRight size={18} />
+            </button>
+          ) : (
+            <button 
+              onClick={() => navigate('/module/3')}
+              disabled={(!isLessonPass && !completedLessons.includes(lesson.id))}
+              className="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 text-white font-medium rounded-xl shadow-sm hover:bg-indigo-700 hover:shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Ir al Módulo 3 <Trophy size={18} />
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Panel derecho: Tablero Interactivo */}
+      <div className="w-full md:w-[450px] lg:w-[500px] xl:w-[600px] flex flex-col gap-4">
+        <div className={`bg-slate-50 dark:bg-slate-900/50 p-2 md:p-4 rounded-2xl border transition-colors shadow-inner ${
+          feedback.type === 'success' ? 'border-emerald-300 dark:border-emerald-700 bg-emerald-50/30 dark:bg-emerald-900/20' : 
+          feedback.type === 'error' ? 'border-red-300 dark:border-red-700 bg-red-50/30 dark:bg-red-900/20' : 
+          'border-slate-200/60 dark:border-slate-700/60'
+        }`}>
+          <Chessboard
+            key={updater} // force re-render when piece moves
+            position={game.fen()}
+            onPieceDrop={onDrop}
+            onSquareClick={onSquareClick}
+            animationDuration={200}
+            customBoardStyle={{
+              borderRadius: "8px",
+              boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+              cursor: lesson.mode === 'find_square' ? 'pointer' : 'default'
+            }}
+            customDarkSquareStyle={{ backgroundColor: "#475569" }}
+            customLightSquareStyle={{ backgroundColor: "#f8fafc" }}
+            showBoardNotation={true}
+          />
+        </div>
+        <div className="flex justify-between items-center px-2">
+          <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+            {lesson.mode === 'find_square' ? 'Prueba Visual' : 'Prueba de Movimiento'}
+          </span>
+          <button 
+            onClick={() => {
+              setGame(new Chess(lesson.initialFen));
+              setFeedback({ type: null, message: '' });
+              setIsLessonPass(false);
+              setUpdater(u => u + 1);
+            }}
+            className="text-sm text-slate-400 hover:text-slate-700 transition-colors font-medium"
+          >
+            Reiniciar tablero
+          </button>
+        </div>
+      </div>
+
+    </div>
+  );
+}
