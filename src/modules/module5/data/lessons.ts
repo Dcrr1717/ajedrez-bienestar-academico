@@ -29,7 +29,7 @@ export const module5Lessons: Module5Lesson[] = [
     instruction: 'Gana la oposición colocando tu rey justo frente al rey negro con una casilla de por medio.',
     mode: 'move_piece',
     targetMove: 'Kd3',
-    initialFen: '8/8/8/3k4/8/8/8/3K4 w - - 0 1', // King on d1, Black K on d5. White moves to d3 to gain opposition.
+    initialFen: '8/8/8/3k4/8/8/3K4/8 w - - 0 1', // White King on d2. Black K on d5. White moves to d3 to gain opposition.
     successMessage: '¡Bien hecho! Al colocarte en d3 ganas la oposición frente a d5. El Rey negro tendrá que cederte el paso.'
   },
   {

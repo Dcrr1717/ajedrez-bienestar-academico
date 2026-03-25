@@ -36,10 +36,10 @@ export const module4Lessons: Module4Lesson[] = [
     id: 'm4-l3',
     title: 'Ataque a la Descubierta',
     description: 'Un ataque a la descubierta se produce cuando mueves una pieza para "descubrir" o liberar el ataque de otra pieza propia que estaba detrás.',
-    instruction: 'Despeja la columna "g" moviendo tu Caballo para dar jaque al Rey con tu Torre escondida.',
+    instruction: 'Despeja la columna "g" moviendo tu Caballo para dar jaque al Rey con tu Torre escondida, y a la vez ataca a la Dama enemiga desprotegida.',
     mode: 'move_piece',
-    targetMove: 'Nf5+', // move to f5 discovers the g-file check
-    initialFen: '6k1/8/8/8/8/6N1/6R1/1K6 w - - 0 1', // White R on g2, N on g3, Black K on g8
-    successMessage: '¡Muy bien! Al apartar el Caballo de la misma columna, la Torre atacará al Rey directamente.'
+    targetMove: 'Nf5+', // move to f5 discovers the g-file check and attacks Qe4
+    initialFen: '6k1/8/3q4/8/8/6N1/6R1/1K6 w - - 0 1', // White R on g2, N on g3, Black K on g8, Black Q on d6
+    successMessage: '¡Doble golpe mortal! Al apartar el Caballo, la Torre da jaque al Rey y de paso atacas a la Dama enemiga.'
   }
 ];

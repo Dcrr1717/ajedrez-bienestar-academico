@@ -68,13 +68,10 @@ export default function Module2() {
     }
   }, [game, currentLessonIndex, isLessonPass]);
 
-  useEffect(() => {
-    setGame(new Chess(lesson.initialFen));
-    setFeedback({ type: null, message: '' });
-    setOptionSquares({});
     setIsLessonPass(completedLessons.includes(lesson.id));
     setUpdater(0);
-  }, [currentLessonIndex, lesson, completedLessons]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson.id]);
 
   if (!lesson || !game) {
     return <div className="p-8 text-center text-slate-500">Cargando lección del Módulo 2...</div>;
