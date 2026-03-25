@@ -29,7 +29,7 @@ export const module4Lessons: Module4Lesson[] = [
     instruction: 'Mueve tu Caballo para dar jaque al Rey y atacar a la Dama negra simultáneamente. (Pista: el Caballo ataca en "L")',
     mode: 'move_piece',
     targetMove: 'Ne2+',
-    initialFen: '8/8/8/8/3k1q2/8/2N5/1K6 w - - 0 1', // Black K on d4, Q on f4. White N on c2. c2->e2 attacks d4 & f4.
+    initialFen: '8/8/8/8/3k1q2/2N5/8/1K6 w - - 0 1', // Black K on d4, Q on f4. White N on c3. c3->e2 attacks d4 & f4.
     successMessage: '¡Brillante! Has logrado un tenedor perfecto.'
   },
   {
