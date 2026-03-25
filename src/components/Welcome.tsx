@@ -99,7 +99,7 @@ export default function Welcome() {
                   {mod.icon}
                 </div>
                 <div>
-                  <div className={`text-xs font-bold uppercase tracking-widest ${c.text} opacity-70`}>Módulo {mod.number}</div>
+                  <div className={`text-xs font-bold uppercase tracking-widest ${c.text} opacity-70`}>Capítulo {mod.number}</div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">{mod.title}</h3>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function Welcome() {
                 ))}
               </ul>
               <button className={`mt-2 w-full py-2.5 ${c.btn} text-white font-medium rounded-xl transition-colors text-sm flex items-center justify-center gap-1 group-hover:gap-2`}>
-                Ir a Módulo {mod.number} <ChevronRight size={16} />
+                Ir a Capítulo {mod.number} <ChevronRight size={16} />
               </button>
             </div>
           );

@@ -1,0 +1,657 @@
+Planificación completa para enseñar ajedrez desde 0
+hasta ELO≈1200
+Enfoque: aprendizaje + práctica (sin notas)
+Estructura base del curso.Se asumen clases de2 horas,2 veces por semana(total:4
+h/semana). Esta frecuencia favorece práctica deliberada, revisión de errores yspaced repetition
+para táctica y finales.
+1) Mapa general del curso (10 módulos)
+M Nombre del módulo Duración Horas Meta (resultado
+observable)
+1 Fundamentos y mates básicos 2 semanas 8 h Jugar legalmente,
+anotar, reconocer
+mates y tablas bási-
+cas.
+2 Táctica I: visión táctica y
+cálculo corto3 semanas 12 h Resolver motivos ele-
+mentales con método
+y reducir blunders.
+3 Finales I: rey y peones (prio-
+ridad alta)3 semanas 12 h Convertir ventajas
+simples de peones y
+defender posiciones
+básicas.
+4 Aperturasporprincipios+re-
+pertorio simple (1200)3 semanas 12 h Salir de apertura con
+plan, sin memorizar
+largas líneas.
+5 Táctica II: mates típicos +
+táctica intermedia3 semanas 12 h Automatizar patro-
+nes de mate y moti-
+vos intermedios.
+6 Estrategia I: estructuras de
+peones y casillas3 semanas 12 h Formular planes se-
+gún estructura: debi-
+lidades, rupturas, co-
+lumnas.
+7 Medio juego: planes típicos,
+ataque y defensa3 semanas 12 h Elegir plan y de-
+fenderse con méto-
+do (sin colapsos tác-
+ticos).
+8 Finales II: torres y piezas me-
+nores3 semanas 12 h Jugar finales fre-
+cuentes: torres,
+alfil/caballo vs peo-
+nes.
+9 Integración: análisis de parti-
+das + repertorio operativo2 semanas 8 h Analizar partidas
+propias y convertir
+errores en ejercicios
+concretos.
+10 Pre-1200: práctica competiti-
+va + gestión del tiempo3 semanas 12 h Sostener rendimien-
+to estable en rápi-
+das/clásicas con ruti-
+na.
+Total sugerido:28 semanas≈112 horas presenciales + práctica guiada en casa.
+1
+2)Planderepasoespaciado(SpacedRepetition)paratácticayfinales
+2.1 Táctica (columna vertebral hasta 1200)
+Ritmo mínimo:15–25 minutos/día, 6 días/semana.
+Volumen sugerido:10–20 problemas/día (calidad>cantidad), conregistro de errores.
+SistemaSRpormotivos(sets):clavada,dobleataque/tenedor,rayosX,descubierta,atracción,
+desviación, sobrecarga, intercepción, eliminación del defensor, patrones de mate.
+Calendario SR:D+1, D+3, D+7, D+14, D+30. Si falla, reinicia en D+1.
+Regla:si no puede explicar por qué funciona (amenaza–defensa–ruptura), el problemanoestá
+dominado.
+2.2 Finales (prioridad alta)
+Ritmo mínimo:3 sesiones/semana de 25–35 minutos.
+Formato:“posición clave→plan→técnica→verificación”.
+SR de finales (posiciones flash):D+2, D+7, D+21.
+Indicador práctico:ejecutar técnica sin ayuda en<3minutos.
+3) Seguimiento del aprendizaje (sin notas) + 3 checkpoints prácticos
+3.1 Diagnóstico inicial (semana 1, no calificado)
+Propósito:conocer punto de partida, hábitos y errores frecuentes.
+Instrumentos:
+•10 preguntas de reglas/notación.
+•12 tácticas elementales (mate en 1–2, piezas colgadas).
+•2 finales K+P (regla del cuadrado, oposición).
+•1 partida 10+0 observada (para hábitos: desarrollo, rey seguro, blunders).
+Salida:perfil inicial + 2 micro-metas semanales personalizadas.
+3.2 Seguimiento formativo semanal (no calificado)
+Cada semana se revisa:
+•Táctica:precisión semanal + motivos fallados.
+•Finales:posiciones modelo dominadas (sí/no) con SR.
+•Partidas:1 partida con auto-análisis (3 momentos críticos).
+•Aperturas/planes:1 ficha breve (cuando el módulo lo requiera).
+Salida semanal:lista de errores raíz + tareas correctivas específicas.
+3.3 Checkpoints (prácticos, sin notas)
+Cada checkpoint es unasesión de controlpara verificar dominio y ajustar el entrenamiento. No
+hay calificación; se genera unplan de refuerzo.
+2
+1.Checkpoint 1 (Básico) – fin de semana 4.
+Estructura:20 min reglas/notación + 20 min táctica (mates/piezas colgadas) + 20 min final K+P
++ 1 partida 15+10.
+2.Checkpoint 2 (Intermedio) – fin de semana 14.
+Estructura:30 min táctica intermedia + 20 min finales (K+P/torre) + 20 min apertura/plan +
+1 partida 15+10 con análisis.
+3.Checkpoint 3 (Pre-1200) – semana 26–28.
+Estructura:mini-torneo (2 partidas 15+10) + 1 partida 45+15 (o 30+20) + revisión repertorio
++ finales flash.
+3.4 Indicadores para medir progreso hacia 1200 (personales)
+Táctica:precisión estable≥70 %en sets mixtos del nivel.
+Blunders:promedio≤2por partida en 15+10.
+Finales:dominar 25 posiciones clave (K+P + torres + piezas menores).
+Aperturas:salir sin perder material en≥80 %de partidas.
+Análisis:identificar 3 errores raíz por partida y definir ejercicio correctivo.
+4) Guía para partidas rápidas y clásicas (gestión del tiempo)
+Rápidas (10+0 a 15+10):
+•Apertura: use principios y repertorio (máx.10%del tiempo).
+•Medio juego: invierta tiempo enposiciones tácticas(contacto de piezas, amenazas directas).
+•Final: evite apuros: active el rey y simplifique si está mejor.
+•Rutina por jugada:Amenazas→Candidatas→Cálculo→Verificación(ACCV).
+Clásicas (30+20, 45+15, 60+0):
+•Identifiquepuntos críticos(cambios, rupturas, sacrificios).
+•Defina unplan de 2–3 jugadas(no solo jugadas sueltas).
+•Tras cada intercambio importante: re-evalúe material, rey, estructura, actividad.
+MÓDULO 1: Fundamentos, reglas, notación y mates básicos
+Duración sugerida:2 semanas (4 clases)Carga horaria:8 horas
+1) Objetivo general
+Dominarreglas,notaciónymates/tablasesenciales,instalandohábitoscorrectosdesdelaprimera
+partida.
+2) Competencias específicas
+Ejecuta reglas: movimientos, capturas, enroque, captura al paso, promoción, jaque/jaque mate,
+tablas.
+Registra una partida en notación algebraica con errores mínimos.
+Reconoce amenazas directas al rey y responde legalmente.
+3
+3) Contenidos
+Tablero, coordenadas, notación algebraica (capturas, jaque, mate, enroque).
+Reglas: enroque (condiciones), captura al paso, promoción.
+Tablas: ahogado (clave), repetición (idea práctica).
+Principios base: valor relativo, seguridad del rey, desarrollo, centro, tempo.
+Mates básicos: mate con dama+rey, torre+rey (introducción).
+4) Actividades prácticas (tablero) y tareas para casa
+En clase:
+“¿Es legal?” (enroque, jaque, piezas clavadas, al paso).
+20 mates en 1 y mates simples con piezas pesadas.
+Mini-partidas 10+0 con objetivo:desarrollar y enrocar.
+Casa:
+60 mates en 1 (6 días).
+Anotar 1 mini-partida (aunque sea contra bot) y entregarla.
+5) Ejercicios sugeridos
+Táctica: mate en 1 (60), piezas colgadas (30).
+Finales: patrón de mate D+R vs R y T+R vs R (reconocimiento).
+Apertura: checklist de 10 jugadas (desarrollo y enroque).
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Reglas y legalidad Juega 2 partidas completas sin movimientos ilegales; explica en-
+roque, al paso y promoción con un ejemplo cada uno.
+Notación Registra 20 jugadas consecutivas con≤2errores menores.
+Mates/tablas Resuelve≥80 %de mates en 1 y reconoce ahogado en ejemplos.
+Hábitos de apertura En 3 partidas, desarrolla≥3piezas y enroca antes de la jugada
+10 sin colgar material.
+7) Errores típicos y corrección
+Mover muchas veces la misma pieza:usar checklist de desarrollo (caballos/alfiles/enroque).
+No revisar jaques:rutina obligatoria JCT (jaques–capturas–amenazas).
+Confusión de notación:dictado de jugadas 5 minutos por clase.
+8) Materiales
+Lichess (tácticas, tablero, estudios).
+Chess.com (práctica y lecciones).
+Cuaderno de notación + checklist imprimible.
+4
+MÓDULO 2: Táctica I (visión táctica y cálculo corto)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Construir visión táctica y método de cálculo breve para reducir blunders y ganar material con
+patrones elementales.
+2) Competencias específicas
+Detecta: clavada, doble ataque/tenedor, descubierta, rayos X, piezas indefensas.
+Aplica ACCV en posiciones tácticas.
+Verifica defensas y contraamenazas antes de ejecutar.
+3) Contenidos
+Clavada absoluta/relativa; tenedores (caballo, dama).
+Ataque a la descubierta/doble descubierta; rayos X.
+Piezas indefensas (“pieza suelta”) y táctica por coordinación.
+Cálculo corto (2–4 medias jugadas) + verificación final.
+4) Actividades y tareas
+En clase:
+Pizarra táctica: 12 posiciones rápidas (2 min c/u) + 2 posiciones profundas (6 min).
+Partidas temáticas 15+10: objetivo explícito = buscar dobles ataques y clavadas.
+Casa:
+6 días/semana: 12–18 problemas/día (mezcla de motivos) + SR D+1/D+3/D+7.
+Bitácora: motivo fallado + razón (no vi defensa, cálculo incompleto, etc.).
+5) Ejercicios sugeridos
+Táctica: 120 problemas (clavadas/tenedores/descubiertas/rayos X).
+Mates en 2 (20) para visión del rey.
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Precisión táctica Mantiene precisión semanal≥70 %y explica 10 posiciones en
+voz alta (amenaza–defensa–clave).
+Método ACCV En 6 posiciones, identifica amenaza rival + lista≥2candidatas
+antes de calcular.
+Blunders En 4 partidas 15+10, no cuelga pieza por olvido táctico más de
+1 vez.
+5
+7) Errores típicos y corrección
+Jugar “el golpe” sin revisar defensa:regla: toda táctica exige verificación.
+Calcular una sola línea:obligar 2 candidatas y comparar.
+Ignorar contraataque al rey:primero JCT del rival antes de ejecutar.
+8) Materiales
+Lichess Training (tácticas con motivos).
+Hoja semanal de motivos (registro SR + errores).
+MÓDULO 3: Finales I (Rey y peones)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Dominarlatécnicaesencialdereyypeonesparaconvertirventajasmínimasydefenderposiciones
+simples.
+2) Competencias específicas
+Aplica oposición, zugzwang simple y triangulación básica.
+Usa regla del cuadrado y carreras de peones pasados.
+Decide cuándo simplificar hacia final favorable.
+3) Contenidos
+Regla del cuadrado; peón pasado; oposición (directa/diagonal).
+Actividad del rey; casillas clave (introducción práctica); zugzwang.
+Rupturas simples de peones y técnica (“crear pasado”).
+Simplificación: cambiar piezas cuando el final favorece.
+4) Actividades y tareas
+En clase:
+Laboratorio: 6 posiciones modelo (jugar ambos bandos).
+Mini-match K+P: 2 partidas desde posición dada.
+Casa:
+3 sesiones/semana: repaso SR (D+2/D+7/D+21) de posiciones flash.
+2 partidas 15+10 con objetivo:cambiar a finalsi conviene.
+5) Ejercicios sugeridos
+Finales: oposición (10), cuadrado (10), pasado (10), zugzwang simple (6).
+Táctica: 60 problemas/semana (mantener hábito).
+6
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Técnica K+P Gana 3/4 posiciones ganadoras y salva 2/3 defendibles (sin ayu-
+da).
+Cálculo de carreras Aplica regla del cuadrado automáticamente en 10/10 ejercicios.
+Simplificación En 6 ejemplos, decide cambiar/evitar cambios con justificación
+basada en rey+peones.
+7) Errores típicos y corrección
+Empujar peones sin activar rey:regla: el rey es una pieza mayor en finales.
+No calcular carrera de peones:uso automático del cuadrado.
+Cambiar piezas sin evaluar:checklist: rey, peones, actividad, pasados.
+8) Materiales
+Lichess Studies (colección de posiciones flash).
+Libro opcional:Silman’s Complete Endgame Course(secciones iniciales).
+MÓDULO 4: Aperturas por principios + repertorio simple (enfoque
+1200)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Construirunrepertoriosimpleyfuncionalbasadoenprincipiosyplanestípicos,evitandotrampas
+comunes.
+2) Competencias específicas
+Sale de apertura con desarrollo, rey seguro y plan de medio juego.
+Reconoce trampas comunes (incluyendo “Mate del pastor” como prevención).
+Memoriza pocas líneas modelo (2–3 por apertura) con ideas y planes.
+3) Contenidos (mínimos obligatorios)
+Principios: centro, desarrollo, rey seguro, coordinación, no cazar peones.
+Trampas comunes: mate del pastor, última fila temprana, piezas colgadas por desarrollo.
+Repertorio recomendado:
+•Apertura abierta (e4-e5): Italiana(plan: c3/d4, desarrollo, ataque si se abre el centro).
+•Semiabierta:Caro-Kanncomo defensa sólida para negras vs 1.e4; (mencionar también Fran-
+cesa/Siciliana como alternativas futuras).
+•d4: Sistema Londrespara blancas (plan estable).
+7
+•Negras vs 1.d4: Gambito de Dama Declinado (QGD)esquema simple.
+•Si aparece Siciliana:respuesta simple (Alapin 2.c3 o principios sin memorizar).
+4) Actividades y tareas
+En clase:
+“Mapa de planes”: (i) casilla clave, (ii) ruptura típica, (iii) pieza buena/mala en cada apertura.
+Partidas temáticas desde jugada 6–8 del esquema (practicar medio juego, no memorizar).
+Casa:
+Fichas: 1 hoja por apertura con ideas, errores frecuentes y 2 líneas modelo.
+4 partidas 15+10 aplicando repertorio (2 blancas, 2 negras), anotando 10 jugadas iniciales.
+5) Ejercicios sugeridos
+Aperturas: 6 posiciones “¿cuál es el plan?” (por esquema).
+Táctica: 80 problemas con errores típicos de apertura (piezas colgadas, mates rápidos).
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Salida limpia En 6 partidas, completa desarrollo + enroque sin perder material
+por táctica temprana.
+Planes típicos Explica 1 ruptura central y 1 plan de flanco para cada apertura
+del repertorio.
+Líneas modelo Reproduce 2 líneas modelo cortas por apertura (2–6 jugadas) y
+describe su idea.
+7) Errores típicos y corrección
+Memorizar sin entender:fichas obligatorias con plan/ruptura.
+Cazar peones:principio: no ganar peón si pierdes tiempos/rey.
+Caer en mates tontos:rutina JCT + crear “aire” cuando corresponda.
+8) Materiales (líneas modelo cortas)
+Italiana:1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4.
+Caro-Kann:1.e4 c6 2.d4 d5 3.e5 Bf5 (plan: atacar cadena y desarrollar sólido).
+Londres:1.d4 d5 2.Nf3 Nf6 3.Bf4 e6 4.e3 (plan estable).
+QGD:1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 (plan: ...c5 o ...e5 cuando convenga).
+Explorador: Lichess Opening Explorer.
+MÓDULO 5: Táctica II (patrones de mate + táctica intermedia)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+8
+1) Objetivo general
+Automatizar patrones de mate y motivos intermedios (atracción, desviación, sobrecarga, inter-
+cepción, eliminación del defensor).
+2) Competencias específicas
+Reconoce patrones: mate del pasillo, mate en la última fila, redes de mate.
+Ejecuta: atracción, desviación, sobrecarga, intercepción, eliminación del defensor.
+Defiende con método: neutraliza amenaza, cambia piezas, devuelve material si es necesario.
+3) Contenidos
+Patrones de mate: pasillo, última fila, ataques típicos al rey enrocado.
+Motivos intermedios: atracción, desviación, sobrecarga, intercepción, eliminación del defensor.
+Defensa táctica: recursos y contraamenazas.
+4) Actividades y tareas
+En clase:
+8 posiciones de mate/ataque por clase (explicación de patrón).
+Partidas temáticas desde posiciones con reyes enrocados y columnas semiabiertas.
+Casa:
+6 días/semana: 15 problemas/día con SR (D+1/D+3/D+7).
+Analizar 1 partida propia: marcar 3 puntos críticos tácticos (con ACCV).
+5) Ejercicios sugeridos
+Táctica: 150 problemas (mate y eliminación del defensor).
+Finales: mate T+R vs R (perfeccionamiento) + mate D+R vs R (repaso).
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Patrones de mate Resuelve un set mixto (mate en 2–3) con precisión≥75 %y
+nombra el patrón.
+Motivos intermedios Identificaelmotivocorrectoen12/16posicionesyproponejugada
+clave con defensa prevista.
+Defensa táctica En 6 ejercicios defensivos, encuentra un recurso útil en≥4(cam-
+bio/contraataque/bloqueo).
+7) Errores típicos y corrección
+Atacar sin coordinación:regla: sumar atacantes y restar defensores antes de sacrificar.
+Ignorar última fila propia:crear “aire” cuando la estructura lo exige.
+9
+8) Materiales
+Colección SR de 30 mates típicos (estudio en Lichess).
+Libro opcional:Winning Chess Tactics(Seirawan).
+MÓDULO 6: Estrategia I (estructuras de peones y casillas)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Comprender cómo la estructura de peones determina planes: debilidades, casillas fuertes/débiles,
+columnas y rupturas.
+2) Competencias específicas
+Identifica: cadenas, debilidades, peón aislado, peones colgantes, peón pasado.
+Evalúa columnas abiertas/semiabiertas y casillas clave.
+Define un plan: ruptura, maniobra, cambio favorable, ataque a debilidad.
+3) Contenidos
+Estructuras: cadenas, islas, aislado, colgantes, pasado, retrasado.
+Casillas fuertes/débiles; pareja de alfiles; caballo vs alfil.
+Columnas y séptima fila; piezas activas vs pasivas.
+4) Actividades y tareas
+En clase:
+Diagnóstico de posición: “estructura→plan” en 8 diagramas.
+Partidas temáticas: jugar contra un peón débil (aislado o retrasado).
+Casa:
+2 partidas 15+10: escribir el plan antes de mover (1 frase).
+Táctica: 60 problemas/semana (mantener columna vertebral).
+5) Ejercicios sugeridos
+Estrategia: 12 ejercicios “elige el plan” (ruptura, mejora, cambio).
+Finales: repaso K+P (SR) + 1 ejercicio de peón pasado por sesión.
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+10
+Indicador Evidencia observable (dominio esperado)
+Lectura de estructura En 8 posiciones, describe correctamente 6 estructuras y su debi-
+lidad principal.
+Plan coherente En 6 análisis, propone un plan de 2–3 jugadas alineado con es-
+tructura y seguridad del rey.
+Aplicación En 4 partidas, mantiene un plan principal durante al menos 6
+jugadas (ajustando si cambia la posición).
+7) Errores típicos y corrección
+Jugar sin plan:plantilla fija: debilidad objetivo + pieza a mejorar + ruptura.
+Cambiar el alfil bueno:explicar alfil bueno/malo según estructura.
+8) Materiales
+Partidas modelo (selección del entrenador): 6 partidas cortas anotadas.
+Libro opcional:Logical Chess: Move by Move(Chernev).
+MÓDULO 7: Medio juego (planes típicos, ataque y defensa)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Aprender a elegir planes típicos (ataque al rey, flanco de dama, minorías, rupturas) y defenderse
+con método.
+2) Competencias específicas
+Decide si corresponde atacar o maniobrar según condiciones (líneas, desarrollo, rey).
+Aplica idea de minorías (introducción) y juego en flanco de dama.
+Defiende activamente: cambios, bloqueo, contraataque, simplificación.
+Reconoce estilos: táctico/agresivo, posicional, universal; elige según la posición.
+3) Contenidos
+Ataque al rey: líneas abiertas, coordinación, sacrificios típicos (solo si hay condiciones).
+Juego en flanco de dama: columnas, presión, creación de pasado.
+Minorías (idea): crear debilidades en estructura rival.
+Rupturas de peones: cuándo y por qué.
+Defensa: recursos tácticos y estratégicos (bloqueo, cambios, contraamenazas).
+11
+4) Actividades y tareas
+En clase:
+“Condiciones del ataque”: evaluar 10 posiciones (atacar vs mejorar vs cambiar).
+Partidas temáticas: enroques opuestos (ataque) y enroques iguales (plan posicional).
+Casa:
+Analizar 1 partida maestra/semana: 10 jugadas clave (por qué, no qué).
+Táctica diaria + 2 sesiones de finales/semana.
+5) Ejercicios sugeridos
+Táctica: 120 problemas (ataque al rey, desviación, eliminación del defensor).
+Estrategia: 10 ejercicios de decisión de plan (ataque vs final vs cambio).
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Selección de plan En 10 posiciones, elige plan principal correcto en 7 con justifica-
+ción (estructura + rey + piezas).
+Defensa activa En 6 ejercicios defensivos, encuentra recurso útil en≥4(cam-
+bio/contraataque/bloqueo).
+Adaptación de estilo Describe su estilo dominante y ajusta el plan cuando cambian
+condiciones (líneas/rey).
+7) Errores típicos y corrección
+Atacar sin abrir líneas:enseñar palancas (rupturas de peón) como condición.
+Defender pasivo:buscar contraamenaza o simplificación a final defendible.
+8) Materiales
+Colección de posiciones “plan típico” (Lichess Studies).
+Libro opcional:The Amateur’s Mind(Silman) capítulos seleccionados.
+MÓDULO 8: Finales II (torres y piezas menores)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Dominar finales frecuentes a nivel 1200: torres (reglas prácticas), alfiles y caballos contra peones,
+técnica y actividad.
+12
+2) Competencias específicas
+Aplica reglas de torre: “torre detrás del peón pasado”, cortar al rey, actividad.
+Juega finales simples de alfil vs peones y caballo vs peones (bloqueo, casillas clave).
+Decide cambios hacia finales favorables (actividad>material).
+3) Contenidos
+Finales de torre: torre activa, torre detrás del pasado, cortar rey, defensa básica.
+Alfil vs peones: color de casillas, alfil bueno/malo en final.
+Caballo vs peones: bloqueo, rutas, evitar zugzwang.
+Simplificación y técnica de conversión.
+4) Actividades y tareas
+En clase:
+Laboratorio: 6 posiciones de torre (ganadoras/defendibles/técnicas).
+Mini-match: “torre detrás del pasado” desde posición dada.
+Casa:
+3 sesiones/semana de finales + repaso SR de K+P.
+Táctica: 60 problemas/semana.
+5) Ejercicios sugeridos
+Finales: 18 posiciones de torre; 8 de alfil; 8 de caballo.
+Táctica: 90 problemas mixtos.
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Reglas de torre Ejecuta “torre detrás del pasado” en 4/5 ejercicios y explica por
+qué.
+Actividad En 6 finales, prioriza actividad (rey/torre) sobre material y lo
+justifica.
+Conversión/defensa Convierte 2/3 posiciones ganadoras y defiende 2/3 defendibles sin
+ayuda.
+7) Errores típicos y corrección
+Torre pasiva:insistir en actividad y en cortar al rey.
+Empujar pasado sin apoyo:coordinar rey + torre + peón.
+8) Materiales
+Colección de posiciones flash (SR D+2/D+7/D+21).
+Libro opcional: Silman (finales de torre y piezas menores).
+13
+MÓDULO 9: Integración (análisis de partidas + repertorio operati-
+vo)
+Duración sugerida:2 semanas (4 clases)Carga horaria:8 horas
+1) Objetivo general
+Consolidar repertorio, mejorar análisis de partidas y transformar errores repetidos en tareas
+concretas.
+2) Competencias específicas
+Analiza con ACCV: amenazas–candidatas–cálculo–verificación.
+Clasifica errores: táctico, estratégico, final, apertura, tiempo.
+Ajusta repertorio: identifica dónde se pierde el plan y lo corrige.
+3) Contenidos
+Método de análisis: puntos críticos, alternativas, lección aprendida.
+Repertorio práctico: “si rival hace X, mi plan es Y” (sin excesiva profundidad).
+Indicadores: precisión táctica, blunders, finales convertidos, manejo de tiempo.
+4) Actividades y tareas
+En clase:
+Clínica de partidas: 2 partidas del alumno, análisis guiado.
+“Repertorio en mapa”: planes típicos y transiciones a medio juego.
+Casa:
+Entregar 2 partidas anotadas: 10 jugadas iniciales + 3 momentos críticos.
+Táctica diaria + 2 sesiones de finales.
+5) Ejercicios sugeridos
+“Simulacro” táctico: 20 problemas mezclados con explicación de 6.
+6 ejercicios “elige el plan” desde posiciones de su repertorio.
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Análisis propio Identifica 3 errores raíz por partida y propone acción correctiva
+(ejercicio concreto).
+Repertorio operativo Juega sus primeras 8–10 jugadas con plan y sin colgar material.
+Registro Mantiene bitácora semanal (táctica/finales/partidas) y la usa pa-
+ra mejorar.
+14
+7) Errores típicos y corrección
+Analizar solo con motor:primero análisis humano, luego motor para validar.
+Cambiar de apertura cada semana:mantener repertorio 8–12 semanas para consolidar planes.
+8) Materiales
+Plantilla: “Error→Causa→Ejercicio correctivo”.
+Herramientas: análisis en Lichess/Chess.com + cuaderno de errores.
+MÓDULO 10: Pre-1200 (práctica competitiva + gestión del tiempo)
+Duración sugerida:3 semanas (6 clases)Carga horaria:12 horas
+1) Objetivo general
+Integrar habilidades (táctica, estrategia, finales y aperturas) en rendimiento competitivo estable
+y medible hacia ELO≈1200.
+2) Competencias específicas
+Juega partidas completas con pocos blunders y plan coherente.
+Administra el tiempo según control (rápida/clásica).
+Ejecuta finales frecuentes sin colapsar (K+P y torres básicos).
+Mantiene rutina semanal sostenible y medible.
+3) Contenidos
+Preparación de partida: calentamiento táctico, repaso de repertorio, objetivo del día.
+Gestión del tiempo: distribución por fases y puntos críticos.
+Disciplina: evitar “tilt”, aprender de errores, constancia.
+4) Actividades y tareas
+En clase:
+Torneo interno: 4 partidas 15+10 (o 25+10) + análisis posterior.
+Simulación clásica: 1 partida 45+15 (o 30+20) con anotación parcial.
+Casa:
+Rutina semanal completa (ver sección 5).
+Preparación del Checkpoint 3: SR táctico + finales flash.
+5) Ejercicios sugeridos
+Táctica: 180 problemas en 3 semanas (mezcla completa).
+Finales: 12 posiciones de torre + repaso K+P (flash).
+Aperturas: repaso de fichas + 6 partidas temáticas desde el repertorio.
+15
+6) Seguimiento y checklist de dominio (sin notas)
+Checklist de dominio (para avanzar sin notas)
+Indicador Evidencia observable (dominio esperado)
+Rendimiento En 6 partidas 15+10: blunders promedio≤2y plan identificable
+en medio juego.
+Finales Convierte K+P ganadores y aplica reglas de torre en posiciones
+modelo.
+Rutina Presenta registro semanal: táctica (precisión), finales (posiciones
+dominadas), análisis (errores raíz).
+7) Errores típicos y corrección
+Jugar sin analizar:regla 1:1 (por cada partida seria, 15 min de revisión).
+Obsesión por aperturas:priorizar táctica+finales (70% del tiempo).
+8) Materiales
+Rutina semanal imprimible + bitácora de errores.
+Colección de 30 posiciones de finales (flash) y 8 sets tácticos SR.
+5) Plan de entrenamiento (rutina semanal sugerida hacia 1200)
+5.1 Rutina estándar
+Táctica (6 días):15–25 min/día. Objetivo: precisión estable≥70 %y explicación.
+Finales (3 días):25–35 min/sesión (posiciones flash + técnica).
+Partidas:2–4 por semana en 15+10 o 25+10 (evitar blitz como herramienta principal).
+Análisis:15–30 min por partida (sin motor primero; con motor después).
+Aperturas:1 sesión/semana (20–30 min) para repasar planes, no memorizar largas líneas.
+5.2 Método ACCV (Amenazas–Candidatas–Cálculo–Verificación)
+1.Amenazas:¿qué amenaza el rival (jaques, capturas, amenazas directas)?
+2.Candidatas:listar 2–3 jugadas candidatas (incluya defensa y mejora).
+3.Cálculo:calcular 1–2 líneas por candidata (4–6 medias jugadas si es táctico).
+4.Verificación:¿hay recurso oculto? ¿mi rey queda inseguro? ¿pierdo material?
+6) Calendario tipo (ejemplos)
+6.1 Ejemplo semanal para las primeras 4 semanas
+16
+Semana Clase 1 (2h) Clase 2 (2h)
+1Reglas + notación.Legalidad, ja-
+que/mate, ahogado.
+Práctica:
+mates en
+1, mini-
+partidas
+(objetivo:
+desarro-
+llo).Enroque + al paso + promoción.
+Práctica:
+dictado
+de nota-
+ción + 12
+mates en
+1.
+Tarea:
+60 mates
+en 1 +
+anotar
+1 mini-
+partida.
+2Principios de apertura.centro, desa-
+rrollo, tempo, rey seguro.
+Práctica:
+2 mini-
+partidas
+con chec-
+klist.Táctica inicial.piezas colgadas + JCT.
+Práctica:
+20 pro-
+blemas
+guiados
++ revi-
+sión de
+partida
+anotada.
+3Táctica I: clavadas y tenedores.
+Práctica:
+set de 12
+posicio-
+nes +
+mini-
+partidas
+buscando
+el motivo.Táctica I: descubiertas y rayos X.
+Práctica:
+set de 12
++ análisis
+ACCV.
+17
+Semana Clase 1 (2h) Clase 2 (2h)
+Tarea:
+6 días
+(12–18
+proble-
+mas/día)
++ bitá-
+cora de
+errores.
+4Finales K+P: regla del cuadrado.
+Práctica:
+4 posi-
+ciones
+modelo
+(ambos
+bandos).Finales K+P: oposición.+ repaso tác-
+tico.
+Práctica:
+4 posicio-
+nes + 10
+tácticas.
+Checkpoint
+1 (prác-
+tico):re-
+glas+táctica+1
+final+1
+partida
+15+10.
+6.2 Ejemplo de una semana intermedia (p.ej., semana 12)
+Semana
+12Clase 1 (2h) Clase 2 (2h)
+Estructuras de peones:aislado y ca-
+sillas débiles.
+Práctica:
+6 diagramas
+“estructura
+→plan”
++ partida
+temática.Plan de medio juego:columna semi-
+abierta, pieza a mejorar, ruptura.
+Práctica:
+análisis
+guiado de
+partida
+corta +
+12 tácticas
+mixtas.
+18
+7) Notas de implementación (curso 100% práctica, sin notas)
+Regla 70/20/10:70% táctica+finales, 20% partidas+análisis, 10% aperturas.
+Cada clase produce evidencia:(i) lista de errores, (ii) sets SR asignados, (iii) micro-meta
+semanal.
+Avance por dominio observable:si el checklist no se cumple, se asigna refuerzo con SR (no
+“reprobación”).
+19

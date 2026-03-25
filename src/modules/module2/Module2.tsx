@@ -4,7 +4,9 @@ import { Chess } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { useProgressStore } from '../../store/useProgressStore';
 import { module2Lessons, type Module2Lesson } from './data/lessons';
-import { CheckCircle2, XCircle, ArrowRight, MousePointerClick, Trophy } from 'lucide-react';
+import { CheckCircle2, XCircle, ArrowRight, MousePointerClick, Trophy, Loader2 } from 'lucide-react';
+import { useStockfish } from '../../hooks/useStockfish';
+import MoveFeedback from '../../components/chess/MoveFeedback';
 
 const playMoveSound = () => {
   try {
@@ -32,10 +34,17 @@ export default function Module2() {
   const [updater, setUpdater] = useState(0);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
   const [isLessonPass, setIsLessonPass] = useState(false);
+  const { analyzeBeforeMove, analyzeAfterMove, feedback: sfFeedback, isEvaluating } = useStockfish();
 
   useEffect(() => {
     setCurrentModule(2);
   }, [setCurrentModule]);
+
+  useEffect(() => {
+    if (game && !isLessonPass) {
+      analyzeBeforeMove(game.fen());
+    }
+  }, [game, currentLessonIndex, isLessonPass]);
 
   useEffect(() => {
     setGame(new Chess(lesson.initialFen));
@@ -84,16 +93,16 @@ export default function Module2() {
           if (moveResult.san === lesson.targetMove) {
             handleSuccess();
           } else {
-            handleError(`Escribiste ${moveResult.san} en el tablero, pero debías jugar ${lesson.targetMove}. Intenta de nuevo.`);
-            // Revert move
-            game!.undo();
-          }
-        } else if (lesson.mode === 'capture_value') {
-          if (moveResult.to === lesson.expectedCapture) {
-            handleSuccess();
-          } else {
-            handleError(`¡Esa no era la mejor captura! Piensa en el valor de las piezas.`);
-            game!.undo();
+            analyzeAfterMove(game!.fen()).then((type) => {
+              const label = type === 'blunder' ? 'Grave Error' : type === 'mistake' ? 'Error' : 'Imprecisión';
+              handleError(`Incorrecto. Eso es un ${label}. Debías jugar ${lesson.targetMove}.`);
+              setTimeout(() => {
+                if (!isLessonPass) {
+                  game!.undo();
+                  setUpdater(u => u + 1);
+                }
+              }, 2500);
+            });
           }
         }
         setUpdater(u => u + 1);
@@ -114,7 +123,7 @@ export default function Module2() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">
-              Módulo 2 - Lección {currentLessonIndex + 1} de {module2Lessons.length}
+              Capítulo 2 - Lección {currentLessonIndex + 1} de {module2Lessons.length}
             </span>
             {completedLessons.includes(lesson.id) && (
               <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
@@ -179,19 +188,27 @@ export default function Module2() {
               disabled={(!isLessonPass && !completedLessons.includes(lesson.id))}
               className="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 text-white font-medium rounded-xl shadow-sm hover:bg-indigo-700 hover:shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Ir al Módulo 3 <Trophy size={18} />
+              Ir al Capítulo 3 <Trophy size={18} />
             </button>
           )}
         </div>
       </div>
 
-      {/* Panel derecho: Tablero Interactivo */}
-      <div className="w-full md:w-[450px] lg:w-[500px] xl:w-[600px] flex flex-col gap-4">
-        <div className={`bg-slate-50 dark:bg-slate-900/50 p-2 md:p-4 rounded-2xl border transition-colors shadow-inner ${
+      <div className="w-full md:w-[450px] lg:w-[500px] xl:w-[600px] flex flex-col gap-4 relative">
+        <MoveFeedback type={sfFeedback.type} visible={sfFeedback.visible} />
+        
+        <div className={`bg-slate-50 dark:bg-slate-900/50 p-2 md:p-4 rounded-2xl border transition-colors shadow-inner relative ${
           feedback.type === 'success' ? 'border-emerald-300 dark:border-emerald-700 bg-emerald-50/30 dark:bg-emerald-900/20' : 
           feedback.type === 'error' ? 'border-red-300 dark:border-red-700 bg-red-50/30 dark:bg-red-900/20' : 
           'border-slate-200/60 dark:border-slate-700/60'
         }`}>
+          {isEvaluating && (
+            <div className="absolute inset-0 z-10 bg-white/40 dark:bg-slate-900/40 rounded-2xl flex items-center justify-center">
+              <div className="bg-white dark:bg-slate-800 shadow-lg rounded-full px-4 py-2 flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300 animate-pulse">
+                <Loader2 size={16} className="animate-spin text-blue-600" /> Analizando IA...
+              </div>
+            </div>
+          )}
           <Chessboard
             key={updater} // force re-render when piece moves
             position={game.fen()}
