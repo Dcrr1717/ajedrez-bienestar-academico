@@ -14,32 +14,32 @@ export interface Module2Lesson {
 export const module2Lessons: Module2Lesson[] = [
   {
     id: 'm2-l1',
-    title: 'La Clavada (Pin)',
-    description: 'Una clavada ocurre cuando una pieza defensora no puede moverse sin exponer una pieza de mayor valor (o al Rey) a la captura.',
-    instruction: 'Usa tu Alfil de casillas blancas para clavar a la Dama negra contra su Rey.',
-    mode: 'move_piece',
-    targetMove: 'Bd5',
-    initialFen: '6k1/8/4q3/8/8/8/B7/1K6 w - - 0 1',
-    successMessage: '¡Excelente! Ahora la Dama no puede moverse porque dejaría en jaque a su Rey (clavada absoluta).'
+    title: 'Coordenadas del Tablero',
+    description: 'El tablero de ajedrez es una cuadrícula. Las columnas van de la "a" a la "h", y las filas del 1 al 8. Cada casilla tiene un nombre único combinado.',
+    instruction: 'Identifica la casilla haciendo clic en: e4',
+    mode: 'find_square',
+    targetSquare: 'e4',
+    initialFen: 'k7/8/8/8/8/8/8/7K w - - 0 1', // Reyes para validación
+    successMessage: '¡Correcto! Has encontrado la casilla e4, el centro del tablero.'
   },
   {
     id: 'm2-l2',
-    title: 'El Tenedor (Fork)',
-    description: 'El tenedor o ataque doble es un movimiento donde una sola pieza ataca a dos o más piezas enemigas al mismo tiempo.',
-    instruction: 'Mueve tu Caballo para dar jaque al Rey y atacar a la Dama negra simultáneamente.',
+    title: 'Notación de Movimientos',
+    description: 'Cuando una pieza se mueve, escribimos su inicial y la casilla destino. Los peones no usan inicial.',
+    instruction: 'Juega el movimiento: Nf3 (Caballo a f3)',
     mode: 'move_piece',
-    targetMove: 'Ne3+',
-    initialFen: '8/8/8/8/3k1q2/8/2N5/1K6 w - - 0 1',
-    successMessage: '¡Brillante! Has logrado un tenedor perfecto.'
+    targetMove: 'Nf3',
+    initialFen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
+    successMessage: '¡Excelente! Has ejecutado y leído notación algebraica con éxito.'
   },
   {
     id: 'm2-l3',
-    title: 'Ataque a la Descubierta',
-    description: 'Un ataque a la descubierta se produce cuando mueves una pieza para "descubrir" o liberar el ataque de otra pieza propia que estaba detrás.',
-    instruction: 'Mueve el Caballo para dar jaque al Rey con tu Torre escondida.',
-    mode: 'move_piece',
-    targetMove: 'Ng6+',
-    initialFen: '6k1/8/8/8/8/6N1/6R1/1K6 w - - 0 1',
-    successMessage: '¡Muy bien! Al apartar el Caballo, la Torre queda automáticamente atacando al Rey.'
+    title: 'Valor de las Piezas',
+    description: 'Generalmente: Peón=1, Caballo/Alfil=3, Torre=5, Dama=9. En un intercambio, intenta ganar material.',
+    instruction: 'Con la Dama blanca en d4, captura la pieza negra de mayor valor que esté desprotegida.',
+    mode: 'capture_value',
+    expectedCapture: 'a7', // capture the sliding rook
+    initialFen: '3b3k/r7/8/8/3Q4/8/8/7K w - - 0 1', 
+    successMessage: '¡Sabia decisión! Ganaste una Torre (5 puntos) en vez de un Alfil (3 puntos).'
   }
 ];

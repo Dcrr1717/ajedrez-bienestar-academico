@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, GraduationCap, Swords, ChevronRight } from 'lucide-react';
+import { BookOpen, GraduationCap, Swords, ChevronRight, Target, Flag } from 'lucide-react';
 
 const modules = [
   {
@@ -28,6 +28,24 @@ const modules = [
     description: 'Pon en práctica todo lo aprendido con una partida completa. El motor valida cada jugada y exporta el PGN de tu partida.',
     topics: ['Partida libre', 'Historial PGN', 'Retroceder y avanzar jugadas'],
     href: '/module/3',
+  },
+  {
+    number: 4,
+    icon: <Target size={28} />,
+    color: 'emerald',
+    title: 'Táctica I',
+    description: 'Aprende los motivos tácticos fundamentales para obtener ventaja material: la clavada, el tenedor y el ataque a la descubierta.',
+    topics: ['La Clavada (Pin)', 'El Tenedor (Fork)', 'Ataque a la Descubierta'],
+    href: '/module/4',
+  },
+  {
+    number: 5,
+    icon: <Flag size={28} />,
+    color: 'blue',
+    title: 'Finales I',
+    description: 'Domina los conceptos clave para ganar o salvar partidas en el final básico de Rey y Peones.',
+    topics: ['Regla del Cuadrado', 'La Oposición', 'El Peón Pasado'],
+    href: '/module/5',
   },
 ];
 
@@ -99,7 +117,7 @@ export default function Welcome() {
                   {mod.icon}
                 </div>
                 <div>
-                  <div className={`text-xs font-bold uppercase tracking-widest ${c.text} opacity-70`}>Capítulo {mod.number}</div>
+                  <div className={`text-xs font-bold uppercase tracking-widest ${c.text} opacity-70`}>Módulo {mod.number}</div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">{mod.title}</h3>
                 </div>
               </div>
@@ -115,7 +133,7 @@ export default function Welcome() {
                 ))}
               </ul>
               <button className={`mt-2 w-full py-2.5 ${c.btn} text-white font-medium rounded-xl transition-colors text-sm flex items-center justify-center gap-1 group-hover:gap-2`}>
-                Ir a Capítulo {mod.number} <ChevronRight size={16} />
+                Ir a Módulo {mod.number} <ChevronRight size={16} />
               </button>
             </div>
           );

@@ -55,15 +55,23 @@ export default function Layout({ children }: LayoutProps) {
             )}
             <Link to="/module/1" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 1 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
               <BookOpen size={16} />
-              <span>Capítulo 1</span>
+              <span>Módulo 1</span>
             </Link>
             <Link to="/module/2" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 2 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
               <BookOpen size={16} />
-              <span>Capítulo 2</span>
+              <span>Módulo 2</span>
             </Link>
             <Link to="/module/3" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 3 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
               <BookOpen size={16} />
-              <span>Capítulo 3</span>
+              <span>Módulo 3</span>
+            </Link>
+            <Link to="/module/4" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 4 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
+              <BookOpen size={16} />
+              <span>Módulo 4</span>
+            </Link>
+            <Link to="/module/5" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 5 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
+              <BookOpen size={16} />
+              <span>Módulo 5</span>
             </Link>
           </nav>
 
