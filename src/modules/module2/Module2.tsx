@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Chess } from 'chess.js';
+import { Chess, type Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { useProgressStore } from '../../store/useProgressStore';
 import { module2Lessons, type Module2Lesson } from './data/lessons';
@@ -33,8 +33,30 @@ export default function Module2() {
   const [game, setGame] = useState<Chess | null>(null);
   const [updater, setUpdater] = useState(0);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
+  const [optionSquares, setOptionSquares] = useState<Record<string, any>>({});
   const [isLessonPass, setIsLessonPass] = useState(false);
   const { analyzeBeforeMove, analyzeAfterMove, feedback: sfFeedback, isEvaluating } = useStockfish();
+
+  const getHighlightStyle = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    return isDark
+      ? { background: 'radial-gradient(circle, rgba(255,255,255,.35) 25%, transparent 25%)', borderRadius: '50%' }
+      : { background: 'radial-gradient(circle, rgba(0,0,0,.3) 25%, transparent 25%)', borderRadius: '50%' };
+  };
+
+  const getMoveOptions = (sourceSquare: string) => {
+    if (isLessonPass || lesson.mode === 'find_square' || !game) return;
+    const newSquares: Record<string, any> = {};
+    const style = getHighlightStyle();
+
+    const moves = game.moves({ square: sourceSquare as Square, verbose: true });
+    moves.forEach((move: any) => { newSquares[move.to] = style; });
+
+    newSquares[sourceSquare] = {
+      background: 'rgba(255, 215, 0, 0.4)',
+    };
+    setOptionSquares(newSquares);
+  };
 
   useEffect(() => {
     setCurrentModule(2);
@@ -49,6 +71,7 @@ export default function Module2() {
   useEffect(() => {
     setGame(new Chess(lesson.initialFen));
     setFeedback({ type: null, message: '' });
+    setOptionSquares({});
     setIsLessonPass(completedLessons.includes(lesson.id));
     setUpdater(0);
   }, [currentLessonIndex, lesson, completedLessons]);
@@ -79,6 +102,7 @@ export default function Module2() {
   }
 
   function onDrop(sourceSquare: string, targetSquare: string) {
+    setOptionSquares({});
     if (isLessonPass || lesson.mode === 'find_square') return false;
 
     try {
@@ -213,6 +237,7 @@ export default function Module2() {
             key={updater} // force re-render when piece moves
             position={game.fen()}
             onPieceDrop={onDrop}
+            onPieceDragBegin={(_, sourceSquare) => getMoveOptions(sourceSquare)}
             onSquareClick={onSquareClick}
             animationDuration={200}
             customBoardStyle={{
@@ -222,6 +247,7 @@ export default function Module2() {
             }}
             customDarkSquareStyle={{ backgroundColor: "#475569" }}
             customLightSquareStyle={{ backgroundColor: "#f8fafc" }}
+            customSquareStyles={{ ...optionSquares }}
             showBoardNotation={true}
           />
         </div>
@@ -233,6 +259,7 @@ export default function Module2() {
             onClick={() => {
               setGame(new Chess(lesson.initialFen));
               setFeedback({ type: null, message: '' });
+              setOptionSquares({});
               setIsLessonPass(false);
               setUpdater(u => u + 1);
             }}

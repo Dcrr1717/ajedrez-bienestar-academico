@@ -26,20 +26,20 @@ export const module4Lessons: Module4Lesson[] = [
     id: 'm4-l2',
     title: 'El Tenedor (Fork)',
     description: 'El tenedor o ataque doble es un movimiento donde una sola pieza ataca a dos o más piezas enemigas al mismo tiempo.',
-    instruction: 'Mueve tu Caballo para dar jaque al Rey y atacar a la Dama negra simultáneamente.',
+    instruction: 'Mueve tu Caballo para dar jaque al Rey y atacar a la Dama negra simultáneamente. (Pista: el Caballo ataca en "L")',
     mode: 'move_piece',
-    targetMove: 'Ne3+',
-    initialFen: '8/8/8/8/3k1q2/8/2N5/1K6 w - - 0 1',
+    targetMove: 'Ne2+',
+    initialFen: '8/8/8/8/3k1q2/8/2N5/1K6 w - - 0 1', // Black K on d4, Q on f4. White N on c2. c2->e2 attacks d4 & f4.
     successMessage: '¡Brillante! Has logrado un tenedor perfecto.'
   },
   {
     id: 'm4-l3',
     title: 'Ataque a la Descubierta',
     description: 'Un ataque a la descubierta se produce cuando mueves una pieza para "descubrir" o liberar el ataque de otra pieza propia que estaba detrás.',
-    instruction: 'Mueve el Caballo para dar jaque al Rey con tu Torre escondida.',
+    instruction: 'Despeja la columna "g" moviendo tu Caballo para dar jaque al Rey con tu Torre escondida.',
     mode: 'move_piece',
-    targetMove: 'Ng6+',
-    initialFen: '6k1/8/8/8/8/6N1/6R1/1K6 w - - 0 1',
-    successMessage: '¡Muy bien! Al apartar el Caballo, la Torre queda automáticamente atacando al Rey.'
+    targetMove: 'Nf5+', // move to f5 discovers the g-file check
+    initialFen: '6k1/8/8/8/8/6N1/6R1/1K6 w - - 0 1', // White R on g2, N on g3, Black K on g8
+    successMessage: '¡Muy bien! Al apartar el Caballo de la misma columna, la Torre atacará al Rey directamente.'
   }
 ];
