@@ -8,7 +8,6 @@ export interface StockfishLine {
 class StockfishService {
   private worker: Worker | null = null;
   private isInitializing = false;
-  private ready = false;
   private currentResolve: ((result: StockfishLine) => void) | null = null;
   private currentBestMove: string = '';
   private currentScore: number = 0;
@@ -31,7 +30,7 @@ class StockfishService {
         const line = event.data;
         
         if (line === 'uciok') {
-          this.ready = true;
+          // Worker is ready
         }
 
         if (typeof line === 'string' && line.startsWith('info depth')) {
@@ -83,7 +82,6 @@ class StockfishService {
       this.worker.postMessage('quit');
       this.worker.terminate();
       this.worker = null;
-      this.ready = false;
       this.isInitializing = false;
     }
   }
