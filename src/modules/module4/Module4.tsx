@@ -68,6 +68,10 @@ export default function Module4() {
     }
   }, [game, currentLessonIndex, isLessonPass]);
 
+  useEffect(() => {
+    setGame(new Chess(lesson.initialFen));
+    setFeedback({ type: null, message: '' });
+    setOptionSquares({});
     setIsLessonPass(completedLessons.includes(lesson.id));
     setUpdater(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
