@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, GraduationCap, Swords, ChevronRight, Target, Flag, Crown } from 'lucide-react';
+import { BookOpen, GraduationCap, Swords, ChevronRight, Target, Flag, Crown, Puzzle } from 'lucide-react';
 
 const modules = [
   {
@@ -55,6 +55,15 @@ const modules = [
     description: 'Domina las 10 aperturas más importantes del ajedrez. Primero observa la demostración animada, luego replica los movimientos tú mismo.',
     topics: ['Italiana, Ruy López, Siciliana', 'Gambito de Dama, Francesa, Caro-Kann', 'Inglesa, Londres, Gambito de Rey, Escocesa'],
     href: '/module/6',
+  },
+  {
+    number: 6.1,
+    icon: <Puzzle size={28} />,
+    color: 'indigo',
+    title: 'Ejercicios de Aperturas',
+    description: 'Pon a prueba tus conocimientos con 10 ejercicios tácticos basados en las aperturas más clásicas. Trampas, celadas y mates famosos.',
+    topics: ['Trampa Legal, Mate Pastor', 'Celadas en Ruy López y Siciliana', 'Trampas en Francesa, Caro-Kann y Londres'],
+    href: '/module/6.1',
   },
 ];
 
