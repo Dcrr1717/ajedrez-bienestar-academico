@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, GraduationCap, Swords, ChevronRight, Target, Flag } from 'lucide-react';
+import { BookOpen, GraduationCap, Swords, ChevronRight, Target, Flag, Crown } from 'lucide-react';
 
 const modules = [
   {
@@ -47,6 +47,15 @@ const modules = [
     topics: ['Regla del Cuadrado', 'La Oposición', 'El Peón Pasado'],
     href: '/module/5',
   },
+  {
+    number: 6,
+    icon: <Crown size={28} />,
+    color: 'amber',
+    title: 'Aperturas Clásicas',
+    description: 'Domina las 10 aperturas más importantes del ajedrez. Primero observa la demostración animada, luego replica los movimientos tú mismo.',
+    topics: ['Italiana, Ruy López, Siciliana', 'Gambito de Dama, Francesa, Caro-Kann', 'Inglesa, Londres, Gambito de Rey, Escocesa'],
+    href: '/module/6',
+  },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; btn: string; iconBg: string; dot: string }> = {
@@ -73,6 +82,14 @@ const colorMap: Record<string, { bg: string; text: string; border: string; btn: 
     btn: 'bg-indigo-600 hover:bg-indigo-700',
     iconBg: 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300',
     dot: 'bg-indigo-400',
+  },
+  amber: {
+    bg: 'bg-amber-50 dark:bg-amber-950/30',
+    text: 'text-amber-700 dark:text-amber-300',
+    border: 'border-amber-200 dark:border-amber-800',
+    btn: 'bg-amber-600 hover:bg-amber-700',
+    iconBg: 'bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-300',
+    dot: 'bg-amber-400',
   },
 };
 

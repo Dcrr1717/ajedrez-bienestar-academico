@@ -7,6 +7,7 @@ import Module2 from './modules/module2/Module2';
 import Module3 from './modules/module3/Module3';
 import Module4 from './modules/module4/Module4';
 import Module5 from './modules/module5/Module5';
+import Module6 from './modules/module6/Module6';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/module/3" element={<Module3 />} />
           <Route path="/module/4" element={<Module4 />} />
           <Route path="/module/5" element={<Module5 />} />
+          <Route path="/module/6" element={<Module6 />} />
           <Route path="*" element={<Navigate to={`/module/${useProgressStore.getState().currentModule || 1}`} replace />} />
         </Routes>
       </Layout>

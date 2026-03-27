@@ -73,6 +73,10 @@ export default function Layout({ children }: LayoutProps) {
               <BookOpen size={16} />
               <span>Módulo 5</span>
             </Link>
+            <Link to="/module/6" className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-sm transition-colors ${currentModule === 6 ? 'text-blue-600 bg-blue-50 dark:bg-blue-950/30' : 'text-slate-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30'}`}>
+              <BookOpen size={16} />
+              <span>Módulo 6</span>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">
