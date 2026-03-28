@@ -4,154 +4,132 @@ export interface ExerciseLesson {
   description: string;
   instruction: string;
   initialFen: string;
-  targetMove: string;
-  targetFrom: string;   // source square of the correct move (for solution arrow)
-  targetTo: string;     // target square of the correct move (for solution arrow)
+  sequence: string[]; // Moves in SAN. Even indices are user moves, odd indices are opponent replies.
   successMessage: string;
-  wrongMoveExplanation: string;  // detailed explanation when they get it wrong
+  wrongMoveExplanation: string;
   openingName: string;
-  hint: string;         // hint shown after 1st wrong attempt
+  hint: string;
 }
 
 export const module6_1Lessons: ExerciseLesson[] = [
   {
     id: 'm6_1-l1',
     title: 'Ejercicio 1: Trampa Legal',
-    description: 'En la Apertura Italiana, existe una trampa célebre llamada la "Trampa Legal". Tras una secuencia de jugadas, las blancas pueden sacrificar la dama para dar un mate espectacular.',
-    instruction: 'Encuentra el sacrificio de caballo que inicia el ataque de mate.',
+    description: 'En la Apertura Italiana, existe una trampa célebre llamada la "Trampa Legal". Tras desarrollar las piezas y provocar una clavada aparente, las blancas pueden sacrificar su dama para dar un mate espectacular.',
+    instruction: 'Realiza la secuencia de 3 jugadas que empieza sacrificando el caballo central.',
     openingName: 'Apertura Italiana',
-    initialFen: 'r1b1kbnr/pppp1ppp/2n5/4p2q/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4',
-    targetMove: 'Nxe5',
-    targetFrom: 'f3',
-    targetTo: 'e5',
-    hint: 'El caballo puede capturar un peón central que está desprotegido…',
-    wrongMoveExplanation: 'La clave de esta trampa es capturar el peón e5 con el caballo (Nxe5). Este sacrificio funciona porque ataca simultáneamente al caballo c6 y a la dama en h5. Si las negras capturan Nxe5, entonces Bxf7+ Ke7 y Bg5+ gana la dama.',
-    successMessage: '¡Correcto! Nxe5 ataca el caballo c6 y la dama h5. Si Nxe5, Bxf7+ Ke7 y Bg5+ gana la dama.'
+    initialFen: 'r2qkbnr/ppp2ppp/2np4/4p2b/2B1P3/2N2N1P/PPPP1PP1/R1BQK2R w KQkq - 1 6',
+    sequence: ['Nxe5', 'Bxd1', 'Bxf7+', 'Ke7', 'Nd5#'],
+    hint: 'Ignora la clavada sobre tu dama y captura el peón central con tu caballo f3...',
+    wrongMoveExplanation: 'La combinación empieza con Nxe5! ignorando que el alfil negro puede capturar tu dama. Al hacer esto las piezas se coordinan a la perfección: si las negras capturan la dama en d1, sigue Bxf7+ forzando al rey a e7, y luego Nd5 es jaque mate inmediato.',
+    successMessage: '¡Excelente! Has ejecutado a la perfección la legendaria Trampa Legal. Un sacrificio de dama histórico.'
   },
   {
     id: 'm6_1-l2',
-    title: 'Ejercicio 2: Gambito de Dama',
-    description: 'Tras 1.d4 d5 2.c4 dxc4 (Gambito de Dama Aceptado), las blancas deben recuperar el peón. ¿Cuál es la mejor manera?',
-    instruction: 'Juega el movimiento más preciso para recuperar el peón con ventaja de desarrollo.',
+    title: 'Ejercicio 2: Recuperando el Gambito de Dama',
+    description: 'En el Gambito de Dama Aceptado (1.d4 d5 2.c4 dxc4 3.e3 b5?), las negras se "aferran" al peón extra jugando b5. Las blancas tienen un método contundente para castigar esta codicia.',
+    instruction: 'Castiga a las negras minando y destruyendo la estructura de peones que defiende c4.',
     openingName: 'Gambito de Dama',
-    initialFen: 'rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3',
-    targetMove: 'e3',
-    targetFrom: 'e2',
-    targetTo: 'e3',
-    hint: 'No necesitas capturar el peón inmediatamente. Piensa en liberar una pieza que pueda recuperarlo después…',
-    wrongMoveExplanation: 'La jugada correcta es e3, que libera al alfil de f1 para que pueda capturar en c4 en la siguiente jugada. Jugar e3 es mejor que intentar recapturar inmediatamente porque te da desarrollo. El peón en c4 no se puede defender fácilmente y caerá pronto.',
-    successMessage: '¡Correcto! e3 no recupera el peón inmediatamente, pero libera al alfil y amenaza Bxc4. El peón c4 caerá pronto.'
+    initialFen: 'rnbqkbnr/p1p1pppp/8/1p6/2pP4/4P3/PP3PPP/RNBQKBNR w KQkq - 0 4',
+    sequence: ['a4', 'c6', 'axb5', 'cxb5', 'Qf3'],
+    hint: 'Mueve el peón "a" para amenazar la base de su estructura. Observa la diagonal que se abrirá...',
+    wrongMoveExplanation: 'La secuencia correcta empieza con a4. El negro intentará mantener la defensa con c6. Tras intercambiar peones (axb5 cxb5), la diagonal a8-h1 queda abierta de par en par. Esto permite a la dama blanca ir a f3, atacando a la torre negra que no tiene escapatoria (ganando material decisivo).',
+    successMessage: '¡Correcto! Qf3 atrapa la torre negra. Este es el motivo táctico por el cual aferrarse al peón en el Gambito de Dama suele ser un error grave.'
   },
   {
     id: 'm6_1-l3',
-    title: 'Ejercicio 3: Celada en la Ruy López',
-    description: 'En la Ruy López, si las negras juegan incorrectamente, las blancas pueden ganar material con una combinación táctica sencilla.',
-    instruction: 'Las negras acaban de jugar Nxe4. Encuentra la respuesta ganadora.',
-    openingName: 'Ruy López',
-    initialFen: 'r1bqkb1r/pppp1ppp/2n5/1B2p3/4n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4',
-    targetMove: 'd4',
-    targetFrom: 'd2',
-    targetTo: 'd4',
-    hint: 'Abre el centro. Si las negras capturan exd4, tu torre entrará con jaque en la columna e…',
-    wrongMoveExplanation: 'La jugada correcta es d4, que abre la posición. La idea es que tras exd4, las blancas juegan Re1 clavando el caballo e4 contra el rey. El caballo no puede escapar porque si se mueve, Re8+ gana la dama. Esto se llama "clavada absoluta" porque el caballo está clavado contra el rey.',
-    successMessage: '¡Correcto! d4 abre líneas y tras exd4 Re1, el caballo e4 está clavado contra el rey. Las blancas ganan pieza.'
+    title: 'Ejercicio 3: Caña de Pescar (Fishing Pole)',
+    description: 'En esta variante agresiva de la Ruy López/Italiana, las negras colocan un caballo en g4 apoyado por el peón h. Si las blancas intentan expulsar al caballo, sucede el desastre.',
+    instruction: 'Las blancas acaban de capturar tu caballo con hxg4. ¡Lanza el contraataque mortal!',
+    openingName: 'Defensa Berlinesa (Variante Fishing Pole)',
+    initialFen: 'r1bqkb1r/pppp1pp1/2n5/4p2p/4P1P1/5N2/PPPP1PP1/RNBQ1RK1 b kq - 0 6',
+    sequence: ['hxg4', 'Ne1', 'Qh4'],
+    hint: 'Permite que abran la columna "h" recapturando con tu peón. Luego, trae a tu dama a la fiesta...',
+    wrongMoveExplanation: 'La clave es capturar con el peón h (hxg4). Al hacerlo, se abre la columna "h" para tu propia torre. El caballo blanco se ve obligado a retirarse, lo que te permite jugar Qh4, amenazando un jaque mate imparable en h2 o h1.',
+    successMessage: '¡Brillante! Qh4 amenaza mate inevitable. El sacrificio de pieza estuvo completamente justificado al abrir la letal columna h.'
   },
   {
     id: 'm6_1-l4',
-    title: 'Ejercicio 4: Mate del Loco',
-    description: 'El mate más rápido posible en el ajedrez. Solo toma 2 jugadas. Es un ejemplo de por qué no se debe debilitar las casillas alrededor del rey.',
-    instruction: 'Encuentra el mate en una jugada con la dama.',
+    title: 'Ejercicio 4: El Mate del Loco',
+    description: 'El mate más rápido posible del ajedrez (solo 2 jugadas) ocurre cuando las blancas exponen su rey avanzando imprudentemente sus peones del flanco de rey.',
+    instruction: 'Las blancas han jugado f3. Realiza la secuencia inicial para dar jaque mate rápidamente.',
     openingName: 'Mate del Loco',
-    initialFen: 'rnbqkbnr/pppppppp/8/8/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2',
-    targetMove: 'Qh4#',
-    targetFrom: 'd8',
-    targetTo: 'h4',
-    hint: 'La diagonal e1-h4 está completamente abierta por los peones que avanzaron. ¿Qué pieza puede aprovechar esa diagonal?',
-    wrongMoveExplanation: 'La dama debe ir a h4 (Qh4#). Las blancas debilitaron fatalmente la diagonal e1-h4 al mover los peones f3 y g4. No hay ninguna pieza blanca que pueda bloquear o capturar la dama en h4, por eso es jaque mate inmediato.',
-    successMessage: '¡Mate del Loco! Qh4# es jaque mate. Los peones f3 y g4 dejaron al rey totalmente expuesto.'
+    initialFen: 'rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1',
+    sequence: ['e5', 'g4', 'Qh4#'],
+    hint: 'Avanza el peón del rey para liberar la diagonal de tu dama...',
+    wrongMoveExplanation: 'De entrada debes liberar a la dama jugando e5 (o e6). Luego, ante el grave error g4 de las blancas, tu dama se desliza fulminante a h4 para dar un jaque mate, aprovechando que las blancas dejaron la diagonal e8-h4 sin defensores.',
+    successMessage: '¡Mate del Loco! Una excelente demostración de por qué es vital proteger las diagonales hacia el rey en la apertura.'
   },
   {
     id: 'm6_1-l5',
-    title: 'Ejercicio 5: Mate Pastor',
-    description: 'El mate más famoso para principiantes. Las blancas combinan alfil y dama para atacar el punto f7. Debes encontrar la jugada de mate.',
-    instruction: 'Da jaque mate al rey negro en f7.',
+    title: 'Ejercicio 5: La Amenaza del Mate Pastor',
+    description: 'Aquí pondremos a prueba la combinación de Dama y Alfil atacando el famoso punto f7. Es una táctica de apertura que debes conocer a la perfección.',
+    instruction: 'Desarrolla tu dama para apuntar a f7 y da jaque mate si el negro ignora la amenaza.',
     openingName: 'Mate Pastor',
-    initialFen: 'r1bqkbnr/pppppppp/2n5/4P3/2B5/8/PPP1QPPP/RNB1K1NR w KQkq - 2 4',
-    targetMove: 'Qxf7#',
-    targetFrom: 'e2',
-    targetTo: 'f7',
-    hint: 'El punto f7 solo está defendido por el rey. Tu dama y tu alfil apuntan directamente a esa casilla…',
-    wrongMoveExplanation: 'La jugada correcta es Qxf7# (jaque mate). El peón f7 es el punto más débil en la posición inicial porque solo lo defiende el rey. La dama captura en f7 con jaque, y como el alfil en c4 también apunta a f7, el rey no puede capturar la dama. No hay casillas de escape ni piezas que bloqueen.',
-    successMessage: '¡Mate Pastor! Qxf7# es jaque mate. El alfil c4 y la dama se coordinan perfectamente contra f7.'
+    initialFen: 'r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3',
+    sequence: ['Qh5', 'Nf6', 'Qxf7#'],
+    hint: 'Tu alfil ya mira a f7. Mueve tu dama a h5 (o f3) para sumar un atacante a esa casilla...',
+    wrongMoveExplanation: 'Tu alfil c4 ya mira a f7, que sólo es defendido por el rey. Jugando Qh5 añades una doble amenaza sobre ese peón. Si las negras desarrollan el caballo (Nf6) atacando a tu dama pero olvidando defender f7, castigas con Qxf7#.',
+    successMessage: '¡Mate Pastor completo! Es un aprendizaje esencial para todos los jugadores que empiezan.'
   },
   {
     id: 'm6_1-l6',
-    title: 'Ejercicio 6: Celada en la Siciliana',
-    description: 'En la Siciliana, si las negras no tienen cuidado con su desarrollo, las blancas pueden ganar material con un truco táctico.',
-    instruction: 'Encuentra la jugada que gana la dama negra o da mate.',
-    openingName: 'Defensa Siciliana',
-    initialFen: 'r1bqkb1r/pp2pppp/2np1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 2 6',
-    targetMove: 'Bb5',
-    targetFrom: 'f1',
-    targetTo: 'b5',
-    hint: 'Busca una jugada que "clave" una pieza negra contra otra pieza más valiosa detrás de ella…',
-    wrongMoveExplanation: 'La jugada correcta es Bb5, que clava el caballo c6 contra la dama en d8. El caballo no puede moverse porque expondría la dama a la captura por el alfil. Además, si Nxd4, Qxd4 sigue ganando. La clavada es uno de los motivos tácticos más importantes en ajedrez.',
-    successMessage: '¡Correcto! Bb5 clava el caballo c6. Si el caballo se mueve, Nxc6 gana la dama. Presión táctica típica de la Siciliana.'
+    title: 'Ejercicio 6: El Sacrificio de Magnus Smith',
+    description: 'En la variante Siciliana, tras dudar con la salida de alfiles, las negras han encerrado su propio rey y dejado su dama en la misma columna. Las blancas tienen un truco.',
+    instruction: 'Aplica una desviación táctica con el alfil para dejar indefensa la dama enemiga.',
+    openingName: 'Defensa Siciliana (Trampa Smith)',
+    initialFen: 'r1bqkb1r/p3pp1p/2p2np1/4p3/2B5/2N5/PPP2PPP/R1BQK2R w KQkq - 0 9',
+    sequence: ['Bxf7+', 'Kxf7', 'Qxd8'],
+    hint: 'Saca a la luz al rey negro mediante un jaque doloroso y fíjate qué pieza queda sin guardia...',
+    wrongMoveExplanation: 'Al sacrificar sorpresivamente Bxf7+, obligas al rey negro a moverse. Si captura con Kxf7, se aleja de la protección de su reina en d8, la cual capturas con Qxd8. Una brillante desviación táctica.',
+    successMessage: '¡Ganas la dama! El sacrificio de desviación expuso la fatal desconexión entre el rey y la reina negra.'
   },
   {
     id: 'm6_1-l7',
-    title: 'Ejercicio 7: Contragambito Albin',
-    description: 'Contra el Gambito de Dama, las negras pueden responder agresivamente con el Contragambito Albin (1.d4 d5 2.c4 e5). Encuentra la trampa oculta.',
-    instruction: 'Juega el avance de peón que crea una trampa mortal.',
-    openingName: 'Contragambito Albin',
-    initialFen: 'rnbqkbnr/ppp2ppp/8/4p3/2Pp4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3',
-    targetMove: 'd3',
-    targetFrom: 'd4',
-    targetTo: 'd3',
-    hint: 'Tu peón pasado puede avanzar una casilla más y crear un problema enorme para las blancas…',
-    wrongMoveExplanation: 'La jugada correcta es d3. Este peón pasado en d3 es extremadamente peligroso porque: (1) bloquea el desarrollo del alfil blanco de f1, (2) amenaza dxe2 ganando la partida, (3) las blancas no pueden capturarlo fácilmente con exd3 porque el alfil aún estaría bloqueado. Es una de las trampas más famosas del ajedrez.',
-    successMessage: '¡Correcto! d3 es la famosa trampa del Albin. El peón pasado en d3 es muy peligroso y bloquea el desarrollo blanco.'
+    title: 'Ejercicio 7: Mate Ahogado (Caro-Kann)',
+    description: 'Si las piezas negras estorban a su propio monarca y éste no tiene escapatoria, la entrada fulminante de un caballo puede ser letal.',
+    instruction: 'Encuentra la única jugada que da un jaque mate por asfixia inmediato.',
+    openingName: 'Defensa Caro-Kann (Smothered Mate)',
+    initialFen: 'r1bqkb1r/pp1npppp/2p2n2/8/4N3/5N2/PPPPQPPP/R1B1KB1R w KQkq - 3 6',
+    sequence: ['Nd6#'],
+    hint: '¡Usa tu caballo para dar jaque en el corazón de la defensa! Fíjate qué pieza blanca clava al peón e7...',
+    wrongMoveExplanation: 'La respuesta correcta es saltar con el caballo: Nd6#. Es jaque mate debido a que el peón de e7 está clavado por la dama en e2 (no puede tomar el caballo). ¡El rey negro está asfixiado por sus propias defensas!',
+    successMessage: '¡Mate por Asfixia (Smothered)! Cuando el peón defensor está clavado, ocurren estos mates tan hermosos.'
   },
   {
     id: 'm6_1-l8',
-    title: 'Ejercicio 8: Trampa en la Francesa',
-    description: 'En la Defensa Francesa (variante del avance), las negras pueden aprovechar una imprecisión blanca para ganar material con una combinación táctica.',
-    instruction: 'Encuentra el movimiento que ataca la cadena de peones blanca.',
-    openingName: 'Defensa Francesa',
+    title: 'Ejercicio 8: Destruyendo el Centro (Francesa)',
+    description: 'Contra el cerrojo estructural de los peones blancos en la Variante del Avance de la Francesa, las negras deben minar su pilar principal: d4.',
+    instruction: 'Ataca la base del centro de peones blanco con peones y piezas coordinadamente.',
+    openingName: 'Defensa Francesa (Avance)',
     initialFen: 'rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3',
-    targetMove: 'c5',
-    targetFrom: 'c7',
-    targetTo: 'c5',
-    hint: 'Un principio fundamental contra cadenas de peones: ¡ataca la base! ¿Cuál es la base de la cadena blanca?',
-    wrongMoveExplanation: 'La jugada correcta es c5, que ataca la BASE de la cadena de peones blanca (d4). Este es un principio fundamental de Nimzowitsch: "Ataca la base de la cadena de peones". Si las blancas no protegen d4, se derrumba toda su estructura central (d4 y e5). Si dxc5, las negras recuperan con Bxc5 y tienen excelente juego.',
-    successMessage: '¡Correcto! c5 ataca la base de la cadena de peones en d4. Esto es un principio fundamental: ¡Ataca la base!'
+    sequence: ['c5', 'c3', 'Nc6', 'Nf3', 'Qb6'],
+    hint: 'La estructura de peones d4-e5 en cadena tiene una base en d4. Empieza atacándola con un peón lateral...',
+    wrongMoveExplanation: 'En la Defensa Francesa es fundamental golpear la cadena de peones de inmediato con c5. Después de c3 (defensa de las blancas), debes redoblar la presión añadiendo tu caballo Nc6 y después tu dama a Qb6, concentrando todos tus ataques en la casilla vital d4.',
+    successMessage: '¡Formación posicional correcta! Atacar rápidamente la base de la cadena d4 es el pilar de la Defensa Francesa.'
   },
   {
     id: 'm6_1-l9',
-    title: 'Ejercicio 9: Alfil Activo Caro-Kann',
-    description: 'La gran ventaja de la Caro-Kann sobre la Francesa es que el alfil de casillas claras sale activo. Después de 1.e4 c6 2.d4 d5 3.exd5 cxd5, ¿dónde va el alfil?',
-    instruction: 'Desarrolla tu alfil de casillas claras a su mejor casilla.',
-    openingName: 'Defensa Caro-Kann',
-    initialFen: 'rnbqkbnr/pp2pppp/8/3p4/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 4',
-    targetMove: 'Bf5',
-    targetFrom: 'c8',
-    targetTo: 'f5',
-    hint: 'El alfil de casillas claras debe salir ANTES de jugar e6 (que lo encerraría como en la Francesa)…',
-    wrongMoveExplanation: 'La jugada correcta es Bf5. Esta es la GRAN ventaja de la Caro-Kann sobre la Defensa Francesa: como no jugaste e6 para apoyar d5 (usaste c6 en su lugar), el alfil de casillas claras puede salir libremente a f5 o g4. En la Francesa, este alfil queda encerrado detrás de los peones en e6/d5. Por eso la Caro-Kann es considerada más sólida.',
-    successMessage: '¡Correcto! Bf5 es la jugada estrella de la Caro-Kann. El alfil está activo fuera de la cadena de peones, a diferencia de la Francesa.'
+    title: 'Ejercicio 9: El Ataque Fígaro (Fried Liver)',
+    description: 'En el Juego Italiano (Ataque Fígaro o Fried Liver), el avance del caballo y alfil apunta a f7 de forma dramática, llevando a rey a pasear al centro del tablero.',
+    instruction: 'Sacrifica el caballo, da jaque y presiona sobre la pieza clavada.',
+    openingName: 'Juego Italiano (Fried Liver Attack)',
+    initialFen: 'r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6',
+    sequence: ['Nxf7', 'Kxf7', 'Qf3+', 'Ke6', 'Nc3'],
+    hint: 'Golpea la cicatriz f7 con tu caballo. A la captura, usa tu reina para hacer un jaque doble...',
+    wrongMoveExplanation: 'El Ataque Fried Liver demanda agresividad total. Tras Nxf7, el rey toma (Kxf7). Sigue un veloz Qf3+ para atacar al rey y clavar al caballo en d5 obligando al rey a defenderlo (Ke6). Finalmente, añadiendo más leña al fuego con Nc3 garantizas ganar en ataque.',
+    successMessage: '¡Impresionante ataque posicional! El rey negro en e6 quedará a merced de tácticas mortales a través de clavadas.'
   },
   {
     id: 'm6_1-l10',
-    title: 'Ejercicio 10: Celada del Sistema Londres',
-    description: 'En el Sistema Londres, si las negras juegan pasivamente, las blancas pueden lanzar un ataque directo al rey. Encuentra la jugada que amenaza mate.',
-    instruction: 'Encuentra la jugada agresiva que amenaza mate en h7.',
-    openingName: 'Sistema Londres',
-    initialFen: 'r1bqkb1r/pppn1ppp/4pn2/3p2B1/3P4/4PN2/PPP2PPP/RN1QKB1R w KQkq - 2 5',
-    targetMove: 'Bd3',
-    targetFrom: 'f1',
-    targetTo: 'd3',
-    hint: 'Tu alfil de casillas claras puede apuntar directamente al enroque negro desde una diagonal peligrosa…',
-    wrongMoveExplanation: 'La jugada correcta es Bd3, que apunta directamente a h7. La batería Bd3 + Nf3 (con posible Ne5) crea una amenaza directa contra el enroque negro. Tras Bd3, la amenaza es Bxh7+ Nxh7 seguido de Ng5+ y Qh5, recuperando la pieza con ataque decisivo. Las negras deben debilitar su posición para defenderse.',
-    successMessage: '¡Correcto! Bd3 apunta directamente a h7. Combinado con Nbd2-e5, se crea una batería de ataque contra el enroque negro.'
+    title: 'Ejercicio 10: La Celada de la Petrov',
+    description: 'La Defensa Petrov promueve copiar movimientos. Cuando ambos bandos toman los peones de e4/e5, se asoma un truco mortal a favor del primer jugador.',
+    instruction: 'Aprovecha el caballo expuesto del rival en el centro para dar caza a la reina.',
+    openingName: 'Defensa Petrov',
+    initialFen: 'rnbqkb1r/pppp1ppp/8/4N3/4n3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4',
+    sequence: ['Qe2', 'Nf6', 'Nc6+'],
+    hint: 'Amenaza al caballo negro de e4 con tu reina sobre la misma columna abierta del rey rival...',
+    wrongMoveExplanation: 'Al alinear la dama (Qe2) frente al caballo suelto en e4 y el rey enemigo en e8 se arma la celada. Si las negras retiran su caballo ingenuamente a f6, creas un brillante ataque al descubierto mediante Nc6+, que daña la estructura del rey pero además ataca irremediablemente a la dama.',
+    successMessage: '¡Jaque a la descubierta magistral! Con Nc6+ has sentenciado y ganado la dama enemiga y la partida.'
   }
 ];
