@@ -125,17 +125,9 @@ export default function Module6_1() {
     setShowSolutionPlaying(false);
   }
 
-  // System auto-play function for both opponent replies AND "Ver Solución"
-  const playSystemMove = useCallback((idx: number, isSolutionMode: boolean) => {
-    if (idx >= lesson.sequence.length) {
-      if (isSolutionMode) {
-        setFeedback({ type: 'success', message: lesson.successMessage });
-        setIsLessonPass(true);
-        markLessonCompleted(lesson.id);
-        setShowSolutionPlaying(false);
-      }
-      return;
-    }
+  // System auto-play function for single opponent reply during normal play
+  const playSystemMove = useCallback((idx: number) => {
+    if (idx >= lesson.sequence.length) return;
 
     const nextSan = lesson.sequence[idx];
     setGame(prevG => {
@@ -149,39 +141,71 @@ export default function Module6_1() {
             [moveDetails.to]:   { background: 'rgba(34, 197, 94, 0.5)' },
           });
         }
-      } catch (e) { console.error("Invalid sequence move!", e); }
+      } catch (e) { console.error("Invalid opponent move!", e); }
       return g;
     });
 
     const newIdx = idx + 1;
     setCurrentMoveIndex(newIdx);
-
-    if (isSolutionMode) {
-      // Keep playing the rest of the sequence
-      systemMoveTimerRef.current = setTimeout(() => playSystemMove(newIdx, true), 800);
+    setIsSystemMoving(false);
+    
+    if (newIdx >= lesson.sequence.length) {
+      setFeedback({ type: 'success', message: lesson.successMessage });
+      setIsLessonPass(true);
+      markLessonCompleted(lesson.id);
     } else {
-      // Just one opponent reply
-      setIsSystemMoving(false);
-      if (newIdx >= lesson.sequence.length) {
-        setFeedback({ type: 'success', message: lesson.successMessage });
-        setIsLessonPass(true);
-        markLessonCompleted(lesson.id);
-      } else {
-        setFeedback({ type: null, message: `Oponente responde. Tu turno de nuevo.` });
-      }
+      setFeedback({ type: null, message: `Oponente responde. Tu turno de nuevo.` });
     }
-  }, [lesson]);
+  }, [lesson, markLessonCompleted]);
+
+  // Recursive function to animate the complete solution from the start
+  const executeSolutionStep = useCallback((idx: number, currentFen: string) => {
+    if (idx >= lesson.sequence.length) {
+      setFeedback({ type: 'success', message: lesson.successMessage });
+      setIsLessonPass(true);
+      markLessonCompleted(lesson.id);
+      setShowSolutionPlaying(false);
+      return;
+    }
+
+    const g = new Chess(currentFen);
+    try {
+      const moveDetails = g.move(lesson.sequence[idx]);
+      if (moveDetails) {
+        playMoveSound();
+        setMoveHighlights({
+          [moveDetails.from]: { background: 'rgba(34, 197, 94, 0.5)' },
+          [moveDetails.to]:   { background: 'rgba(34, 197, 94, 0.5)' },
+        });
+        setGame(g);
+        setCurrentMoveIndex(idx + 1);
+
+        systemMoveTimerRef.current = setTimeout(() => {
+          executeSolutionStep(idx + 1, g.fen());
+        }, 1200); // 1.2 seconds between moves for clarity
+      }
+    } catch (e) {
+      setShowSolutionPlaying(false);
+    }
+  }, [lesson, markLessonCompleted]);
 
   function handleShowSolution() {
     if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
     if (systemMoveTimerRef.current) clearTimeout(systemMoveTimerRef.current);
+    
     setIsUndoing(false);
     setShowSolutionPlaying(true);
     setOptionSquares({});
-    setFeedback({ type: null, message: `Mostrando solución...` });
+    setFeedback({ type: null, message: `Mostrando solución completa...` });
     
-    // Start playing the sequence from wherever the user got stuck
-    playSystemMove(currentMoveIndex, true);
+    // Reset to start
+    setGame(new Chess(lesson.initialFen));
+    setCurrentMoveIndex(0);
+    setMoveHighlights({});
+    
+    systemMoveTimerRef.current = setTimeout(() => {
+      executeSolutionStep(0, lesson.initialFen);
+    }, 600);
   }
 
   function onDrop(sourceSquare: string, targetSquare: string) {
@@ -219,7 +243,7 @@ export default function Module6_1() {
             setIsSystemMoving(true);
             setFeedback({ type: null, message: '¡Correcto! Oponente pensando...' });
             systemMoveTimerRef.current = setTimeout(() => {
-              playSystemMove(nextIdx, false);
+              playSystemMove(nextIdx);
             }, 600);
           }
           return true;
