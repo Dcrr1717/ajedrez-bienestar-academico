@@ -99,7 +99,8 @@ export default function Module6_1() {
     setShowSolutionPlaying(false);
     if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
     if (systemMoveTimerRef.current) clearTimeout(systemMoveTimerRef.current);
-  }, [lesson.id, lesson.initialFen, completedLessons]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson.id]);
 
   useEffect(() => {
     return () => { 
