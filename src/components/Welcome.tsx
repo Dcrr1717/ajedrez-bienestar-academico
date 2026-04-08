@@ -65,6 +65,15 @@ const modules = [
     topics: ['Trampa Legal, Mate Pastor', 'Celadas en Ruy López y Siciliana', 'Trampas en Francesa, Caro-Kann y Londres'],
     href: '/module/6.1',
   },
+  {
+    number: 7,
+    icon: <Target size={28} />,
+    color: 'red',
+    title: 'Tácticas de Jaque Mate',
+    description: 'Aprende los patrones de mate más letales de la historia del ajedrez. Asesta el golpe de gracia a tus contrincantes.',
+    topics: ['Mate del Pasillo, Mate Árabe', 'Kisses of Death, Mate de la Coz', 'Mate de Boden, Anastasia y Morphy'],
+    href: '/module/7',
+  },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; btn: string; iconBg: string; dot: string }> = {
@@ -99,6 +108,14 @@ const colorMap: Record<string, { bg: string; text: string; border: string; btn: 
     btn: 'bg-amber-600 hover:bg-amber-700',
     iconBg: 'bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-300',
     dot: 'bg-amber-400',
+  },
+  red: {
+    bg: 'bg-red-50 dark:bg-red-950/30',
+    text: 'text-red-700 dark:text-red-300',
+    border: 'border-red-200 dark:border-red-800',
+    btn: 'bg-red-600 hover:bg-red-700',
+    iconBg: 'bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300',
+    dot: 'bg-red-400',
   },
 };
 
