@@ -74,6 +74,15 @@ const modules = [
     topics: ['Mate del Pasillo, Mate Árabe', 'Kisses of Death, Mate de la Coz', 'Mate de Boden, Anastasia y Morphy'],
     href: '/module/7',
   },
+  {
+    number: 8,
+    icon: <Swords size={28} />,
+    color: 'purple',
+    title: 'Tácticas Avanzadas (32 Ejercicios)',
+    description: 'El módulo más completo: domina las 4 tácticas más poderosas del ajedrez con 8 ejercicios de cada categoría.',
+    topics: ['8 Mates clásicos y combinaciones', '8 Tenedores (Fork) de caballo y dama', '8 Clavadas (Pin) y descubiertas'],
+    href: '/module/8',
+  },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; btn: string; iconBg: string; dot: string }> = {
@@ -116,6 +125,14 @@ const colorMap: Record<string, { bg: string; text: string; border: string; btn: 
     btn: 'bg-red-600 hover:bg-red-700',
     iconBg: 'bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300',
     dot: 'bg-red-400',
+  },
+  purple: {
+    bg: 'bg-purple-50 dark:bg-purple-950/30',
+    text: 'text-purple-700 dark:text-purple-300',
+    border: 'border-purple-200 dark:border-purple-800',
+    btn: 'bg-purple-600 hover:bg-purple-700',
+    iconBg: 'bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300',
+    dot: 'bg-purple-400',
   },
 };
 

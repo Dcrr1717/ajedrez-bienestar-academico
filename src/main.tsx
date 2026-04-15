@@ -11,3 +11,8 @@ createRoot(document.getElementById('root')!).render(
     </ErrorBoundary>
   </StrictMode>,
 )
+
+// Hide the HTML loading screen once React has fully mounted
+if (typeof (window as any).__hideLoader === 'function') {
+  (window as any).__hideLoader();
+}

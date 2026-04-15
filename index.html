@@ -1,13 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>proyecto-de-ajedrez-bienestar-academico</title>
+    <title>Ajedrez Académico — Bienestar Estudiantil</title>
+    <meta name="description" content="Plataforma interactiva de ajedrez para el bienestar académico estudiantil. Aprende aperturas, tácticas y finales." />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      #app-loader {
+        position: fixed; inset: 0; z-index: 99999;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+      #app-loader.hidden { opacity: 0; visibility: hidden; }
+      .loader-board {
+        display: grid; grid-template-columns: repeat(8, 36px);
+        grid-template-rows: repeat(8, 36px);
+        border: 2px solid rgba(99,102,241,0.4);
+        border-radius: 8px; overflow: hidden;
+        box-shadow: 0 0 60px rgba(99,102,241,0.3);
+        margin-bottom: 32px;
+      }
+      .loader-sq { width: 36px; height: 36px; }
+      .loader-sq.light { background: rgba(148,163,184,0.15); }
+      .loader-sq.dark  { background: transparent; }
+      .loader-logo {
+        font-size: 56px; margin-bottom: 16px;
+        animation: loader-float 2s ease-in-out infinite;
+        filter: drop-shadow(0 0 20px rgba(99,102,241,0.8));
+      }
+      .loader-title {
+        color: white; font-family: system-ui, sans-serif;
+        font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+        margin-bottom: 8px; text-align: center;
+      }
+      .loader-sub {
+        color: rgba(148,163,184,0.8); font-family: system-ui, sans-serif;
+        font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      .loader-bar-wrap {
+        width: 240px; height: 4px; background: rgba(255,255,255,0.1);
+        border-radius: 99px; overflow: hidden;
+      }
+      .loader-bar {
+        height: 100%; width: 30%;
+        background: linear-gradient(90deg, #6366f1, #3b82f6, #6366f1);
+        background-size: 200% 100%;
+        border-radius: 99px;
+        animation: loader-shimmer 1.4s linear infinite;
+      }
+      @keyframes loader-float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes loader-shimmer {
+        0% { background-position: 200% 0; transform: translateX(-100%); }
+        100% { background-position: -200% 0; transform: translateX(400%); }
+      }
+    </style>
   </head>
   <body>
+    <!-- Loading Screen (pure HTML, shown before React loads) -->
+    <div id="app-loader">
+      <div class="loader-logo">♞</div>
+      <div class="loader-title">Ajedrez Académico</div>
+      <div class="loader-sub">Cargando plataforma…</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Hide loader once React has mounted
+      window.__hideLoader = function() {
+        var el = document.getElementById('app-loader');
+        if (el) { el.classList.add('hidden'); setTimeout(function(){ el.remove(); }, 500); }
+      };
+    </script>
   </body>
 </html>
