@@ -215,6 +215,20 @@ export default function Module8() {
 
     try {
       const currentSanTarget = lesson.sequence[currentMoveIndex];
+
+      // Find what FROM/TO the expected move translates to using chess.js
+      const gExpected = new Chess(game.fen());
+      let expectedFrom = '';
+      let expectedTo = '';
+      try {
+        const expectedResult = gExpected.move(currentSanTarget);
+        if (expectedResult) {
+          expectedFrom = expectedResult.from;
+          expectedTo = expectedResult.to;
+        }
+      } catch (_e) { /* ignore */ }
+
+      // Now try the actual move the user made
       const g = new Chess(game.fen());
       const moveResult = g.move({
         from: sourceSquare,
@@ -223,7 +237,11 @@ export default function Module8() {
       });
 
       if (moveResult) {
-        if (moveResult.san === currentSanTarget) {
+        // Compare by from/to squares — immune to SAN notation differences
+        const isCorrect =
+          moveResult.from === expectedFrom && moveResult.to === expectedTo;
+
+        if (isCorrect) {
           // ✅ CORRECT MOVE
           setGame(g);
           playMoveSound();
@@ -277,7 +295,6 @@ export default function Module8() {
             setMoveHighlights({});
             setIsUndoing(false);
             setLastWrongMove(null);
-            // reset feedback if it was just the first error
             if (newWrongs === 1) setFeedback({type: null, message: ''});
           }, 2500);
 
@@ -285,7 +302,6 @@ export default function Module8() {
         }
       }
     } catch (_e: any) {
-      // illegal move
       setFeedback({ type: 'error', message: 'Ese movimiento no es legal. Intenta con otro.' });
       return false;
     }
