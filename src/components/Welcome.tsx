@@ -83,6 +83,15 @@ const modules = [
     topics: ['8 Mates clásicos y combinaciones', '8 Tenedores (Fork) de caballo y dama', '8 Clavadas (Pin) y descubiertas'],
     href: '/module/8',
   },
+  {
+    number: 9,
+    icon: <Crown size={28} />,
+    color: 'yellow',
+    title: 'Estilo Bobby Fischer',
+    description: 'Aprende y pon a prueba tus habilidades con tácticas inspiradas en el jugador más brillante del siglo XX.',
+    topics: ['20 Ejercicios de Ataque Dorado', '20 Ejercicios de Defensa Sólida', 'Niveles: Fácil, Medio y Difícil'],
+    href: '/module/9',
+  },
 ];
 
 const colorMap: Record<string, { bg: string; text: string; border: string; btn: string; iconBg: string; dot: string }> = {
@@ -133,6 +142,14 @@ const colorMap: Record<string, { bg: string; text: string; border: string; btn: 
     btn: 'bg-purple-600 hover:bg-purple-700',
     iconBg: 'bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300',
     dot: 'bg-purple-400',
+  },
+  yellow: {
+    bg: 'bg-yellow-50 dark:bg-yellow-950/30',
+    text: 'text-yellow-700 dark:text-yellow-300',
+    border: 'border-yellow-200 dark:border-yellow-800',
+    btn: 'bg-yellow-600 hover:bg-yellow-700',
+    iconBg: 'bg-yellow-100 dark:bg-yellow-900/50 text-yellow-600 dark:text-yellow-300',
+    dot: 'bg-yellow-400',
   },
 };
 

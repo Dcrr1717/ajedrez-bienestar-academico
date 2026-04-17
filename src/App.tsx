@@ -13,6 +13,7 @@ import Module6 from './modules/module6/Module6';
 import Module6_1 from './modules/module6_1/Module6_1';
 import Module7 from './modules/module7/Module7';
 import Module8 from './modules/module8/Module8';
+import Module9 from './modules/module9/Module9';
 
 function App() {
   const [showSplash, setShowSplash] = useState(() => {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/module/6.1" element={<Module6_1 />} />
             <Route path="/module/7" element={<Module7 />} />
             <Route path="/module/8" element={<Module8 />} />
+            <Route path="/module/9" element={<Module9 />} />
             <Route path="*" element={<Navigate to={`/module/${useProgressStore.getState().currentModule || 1}`} replace />} />
           </Routes>
         </Layout>
