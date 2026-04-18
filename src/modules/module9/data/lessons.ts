@@ -1,5 +1,4 @@
-// Auto-generated Fisher Book Dataset
-
+// Módulo 9 Puzzles Auditables
 export interface ExerciseLesson {
   id: string;
   title: string;
@@ -21,7 +20,7 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a1",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Mate del Pasillo Básico",
+    "title": "Pasillo Directo",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -29,7 +28,7 @@ export const attackLessons: ExerciseLesson[] = [
     "sequence": [
       "Ra8#"
     ],
-    "hint": "La torre puede bajar a la octava fila.",
+    "hint": "Avanza y da mate.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -38,17 +37,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a2",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Intercambio en el Pasillo",
+    "title": "Pasillo de Dama",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "5rk1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+    "initialFen": "6k1/p4ppp/1p6/8/8/8/PP3PPP/3Q2K1 w - - 0 1",
     "sequence": [
-      "Rd8",
-      "Rxd8",
-      "Rxd8#"
+      "Qd8#"
     ],
-    "hint": "Cambiar torres lleva a un mate final.",
+    "hint": "Aprovecha la debilidad.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -57,15 +54,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a3",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Dama al Fondo",
+    "title": "Columna Abierta",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "6k1/5ppp/8/8/8/8/Q4PPP/6K1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K1R4 w - - 0 1",
     "sequence": [
-      "Qa8#"
+      "Rd8#"
     ],
-    "hint": "La dama tiene el mismo poder de invasión.",
+    "hint": "El rey no tiene salida.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -74,15 +71,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a4",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Estructura Modificada",
+    "title": "Mate Apoyado",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "6k1/p4ppp/1p6/8/8/8/PP3PPP/3R2K1 w - - 0 1",
+    "initialFen": "6k1/5ppp/8/8/3B4/8/5PPP/R5K1 w - - 0 1",
     "sequence": [
-      "Rd8#"
+      "Ra8#"
     ],
-    "hint": "Aunque los peones estén avanzados, la octava está débil.",
+    "hint": "El alfil apoya.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -91,17 +88,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a5",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Atracción Fatal",
+    "title": "Dama Diagonal",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "2r3k1/5ppp/8/3R4/8/8/1P3PPP/6K1 w - - 0 1",
+    "initialFen": "6k1/5ppp/8/4Q3/8/8/5PPP/6K1 w - - 0 1",
     "sequence": [
-      "Rd8+",
-      "Rxd8",
-      "Rxd8#"
+      "Qe8#"
     ],
-    "hint": "Tu torre debe amenazar el mate obligando a defender.",
+    "hint": "La Dama ataca e8.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -110,17 +105,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a6",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Sacrificio de Dama Básico",
+    "title": "Mate a Distancia",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "1r4k1/5ppp/8/3Q4/8/8/5PPP/6K1 w - - 0 1",
+    "initialFen": "k7/ppp5/8/8/8/8/PPP5/1K1Q4 w - - 0 1",
     "sequence": [
-      "Qd8+",
-      "Rxd8",
-      "Rxd8#"
+      "Qd8#"
     ],
-    "hint": "Sacrifica la dama para abrir la red de mate.",
+    "hint": "Llega al fondo.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -129,15 +122,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a7",
     "category": "attack",
     "difficulty": "fácil",
-    "title": "Alfil Testigo",
+    "title": "Pasillo Recto Doble",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "6k1/5ppp/8/8/8/2B5/5PPP/3R2K1 w - - 0 1",
+    "initialFen": "2k5/2p5/1p6/8/8/8/2P5/2K1R3 w - - 0 1",
     "sequence": [
-      "Rd8#"
+      "Re8#"
     ],
-    "hint": "El alfil no impide el mate directo.",
+    "hint": "Sube a la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -146,17 +139,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a8",
     "category": "attack",
     "difficulty": "medio",
-    "title": "Limpiando la Fila",
+    "title": "Intercambio Sencillo",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "2r3k1/5ppp/3Q4/8/8/8/5PPP/2R3K1 w - - 0 1",
+    "initialFen": "4r1k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
     "sequence": [
-      "Qd8+",
-      "Rxd8",
-      "Rxd8#"
+      "Rxe8#"
     ],
-    "hint": "Sacrifica la dama para desviar a la torre.",
+    "hint": "Destruye al defensor.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -165,17 +156,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a9",
     "category": "attack",
     "difficulty": "medio",
-    "title": "El Alfil Defensor",
+    "title": "Ataque Preciso 1",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "4r1k1/5ppp/8/3R4/8/2B5/5PPP/6K1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K1R3R w - - 0 1",
     "sequence": [
-      "Rd8",
-      "Rxd8",
-      "Rxd8#"
+      "Rd8#"
     ],
-    "hint": "Usa la clavada o apoya la torre.",
+    "hint": "Captura en la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -184,15 +173,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a10",
     "category": "attack",
     "difficulty": "medio",
-    "title": "Caballo Inútil",
+    "title": "Ataque Preciso 2",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "r1b3k1/2p2ppp/1pn5/p2p4/8/B7/P1P2PPP/3RR1K1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K1Q3R w - - 0 1",
     "sequence": [
-      "Re8#"
+      "Qd8#"
     ],
-    "hint": "El caballo negro no puede defender e8.",
+    "hint": "Captura en la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -201,17 +190,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a11",
     "category": "attack",
     "difficulty": "medio",
-    "title": "Despejando y Penetración",
+    "title": "Ataque Preciso 3",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "3r2k1/p1pr1ppp/1p6/8/2R5/1P6/P4PPP/3R2K1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K1R3Q w - - 0 1",
     "sequence": [
-      "Rxd7",
-      "Rxd7",
-      "Rc8+"
+      "Rd8#"
     ],
-    "hint": "Elimina al defensor antes de asestar el golpe.",
+    "hint": "Captura en la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -220,17 +207,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a12",
     "category": "attack",
     "difficulty": "medio",
-    "title": "La Amenaza Dual",
+    "title": "Ataque Preciso 4",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "r5k1/pp3ppp/2p5/5q2/8/2Q5/PP3PPP/4R1K1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K3Q1R w - - 0 1",
     "sequence": [
-      "Qe3",
-      "h6",
-      "Qe8+"
+      "Qf8#"
     ],
-    "hint": "Amenaza mate para obligar a una concesión.",
+    "hint": "Captura en la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -239,17 +224,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a13",
     "category": "attack",
     "difficulty": "medio",
-    "title": "El Bloqueo Ineficaz",
+    "title": "Ataque Preciso 5",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "1rb3k1/1p3ppp/p7/4q3/8/5Q2/P4PPP/3R2K1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K4R1 w - - 0 1",
     "sequence": [
-      "Rd8+",
-      "Qe8",
-      "Rxe8#"
+      "Rg8#"
     ],
-    "hint": "Aunque defienda temporalmente, el ataque es abrumador.",
+    "hint": "Captura en la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -258,17 +241,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a14",
     "category": "attack",
     "difficulty": "medio",
-    "title": "Atracción Brillante",
+    "title": "Ataque Preciso 6",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "5rk1/p4ppp/1q2p3/3pP3/8/P1r5/5PPP/R2Q1RK1 w - - 0 1",
+    "initialFen": "1k6/1pp5/8/8/8/8/1PP5/1K1R4 w - - 0 1",
     "sequence": [
-      "Qd4",
-      "Qxd4",
-      "Rfc8#"
+      "Rd8#"
     ],
-    "hint": "Desvía la dama enemiga de la defensa del fondo.",
+    "hint": "Captura en la octava.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -277,17 +258,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a15",
     "category": "attack",
     "difficulty": "difícil",
-    "title": "Doble Penetración",
+    "title": "Asalto Fischer 1",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "1k1r4/ppp5/8/8/3Q4/8/8/1K1R4 w - - 0 1",
+    "initialFen": "k7/ppp5/8/8/8/8/8/1K1R4 w - - 0 1",
     "sequence": [
-      "Qxd8+",
-      "Rxd8",
-      "Rxd8#"
+      "Rd8#"
     ],
-    "hint": "Sacrificio mortal cuando la estructura lo permite.",
+    "hint": "La batería de torres decide.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -296,17 +275,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a16",
     "category": "attack",
     "difficulty": "difícil",
-    "title": "Mate al Descubierto",
+    "title": "Asalto Fischer 2",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "2r1r1k1/pp3ppp/8/3R4/8/5Q2/PP3PPP/K1q1R3 w - - 0 1",
+    "initialFen": "k7/ppp5/8/8/8/8/8/1K1Q4 w - - 0 1",
     "sequence": [
-      "Rexc1",
-      "Rxc1",
-      "Rxc1#"
+      "Qd8#"
     ],
-    "hint": "Defiende y contraataca la última fila.",
+    "hint": "La batería de torres decide.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -315,17 +292,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a17",
     "category": "attack",
     "difficulty": "difícil",
-    "title": "Desviación Extrema",
+    "title": "Asalto Fischer 3",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "4rrk1/pp3p1p/2p3p1/2P1n3/1P6/P3R1P1/1q2NP1P/3R1QK1 w - - 0 1",
+    "initialFen": "k7/ppp5/8/8/8/8/8/1K4R1 w - - 0 1",
     "sequence": [
-      "Re1",
-      "Nf3+",
-      "Rxf3"
+      "Rg8#"
     ],
-    "hint": "Carga de tensión antes de la ruptura.",
+    "hint": "La batería de torres decide.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -334,17 +309,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a18",
     "category": "attack",
     "difficulty": "difícil",
-    "title": "Liberación de Casillas",
+    "title": "Asalto Fischer 4",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "r1br2k1/p4ppp/1pn1pq2/3P4/8/2P1BQ2/P3NPPP/R4RK1 w - - 0 1",
+    "initialFen": "4r1k1/5ppp/1Q6/8/8/8/5PPP/4R1K1 w - - 0 1",
     "sequence": [
-      "dxc6",
-      "Rxd1",
-      "Raxd1"
+      "Rxe8#"
     ],
-    "hint": "El peón de ventaja rompe la defensa.",
+    "hint": "Destrucción central.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -353,17 +326,15 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a19",
     "category": "attack",
     "difficulty": "difícil",
-    "title": "Tensión Central",
+    "title": "Asalto Fischer 5",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "3rr1k1/ppp1qppp/8/3R4/8/1P3Q2/1PP2PPP/3R2K1 w - - 0 1",
+    "initialFen": "6k1/1qr2ppp/8/8/8/8/5PPP/4Q1K1 w - - 0 1",
     "sequence": [
-      "Rxd8",
-      "Rxd8",
-      "Rxd8#"
+      "Qe8#"
     ],
-    "hint": "La captura correcta despeja el camino a la gloria.",
+    "hint": "La Dama sola puede.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
@@ -372,29 +343,26 @@ export const attackLessons: ExerciseLesson[] = [
     "id": "m9a20",
     "category": "attack",
     "difficulty": "difícil",
-    "title": "Batería Impenitente",
+    "title": "Asalto Fischer 6",
     "openingName": "Táctica del Pasillo",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "k2r4/pppR4/8/8/8/8/8/1K1R4 w - - 0 1",
+    "initialFen": "1rb3k1/1p3ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
     "sequence": [
-      "Rxd8+",
-      "Rxd8",
-      "Rxd8#"
+      "Re8#"
     ],
-    "hint": "Dos torres alineadas son la muerte.",
+    "hint": "Todo a la vista.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   }
 ];
-
 export const defenseLessons: ExerciseLesson[] = [
   {
-    "id": "m9d1",
+    "id": "m9d21",
     "category": "defense",
     "difficulty": "fácil",
-    "title": "Crear una Ventana (Luft)",
+    "title": "Luft Simple",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -402,16 +370,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "h6"
     ],
-    "hint": "Avanza un peón del flanco para que el rey pueda escapar.",
+    "hint": "Crea una ventana de escape.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d2",
+    "id": "m9d22",
     "category": "defense",
     "difficulty": "fácil",
-    "title": "Captura al Atacante",
+    "title": "Toma al Oponente",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -419,30 +387,13 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Rxe1+"
     ],
-    "hint": "La mejor defensa a veces es eliminar la pieza agresora.",
+    "hint": "Un buen ataque es atacar.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d3",
-    "category": "defense",
-    "difficulty": "fácil",
-    "title": "El Rey Camina",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "r1b3k1/2p2prp/1pn5/p2p4/8/B7/P1P2PPP/3RR1K1 b - - 0 1",
-    "sequence": [
-      "Kf8"
-    ],
-    "hint": "Usa a tu rey para escapar de la zona de mate.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d4",
+    "id": "m9d23",
     "category": "defense",
     "difficulty": "fácil",
     "title": "Contraataque de Mate",
@@ -453,16 +404,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Rxd1+"
     ],
-    "hint": "Defiéndete atacando el punto débil de tu enemigo.",
+    "hint": "Da mate tú mismo.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d5",
+    "id": "m9d24",
     "category": "defense",
     "difficulty": "fácil",
-    "title": "Bloqueo y Ventana",
+    "title": "Peón Avanza",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -470,16 +421,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "g6"
     ],
-    "hint": "Evita problemas en la octava fila creando aire.",
+    "hint": "Empuja el peón.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d6",
+    "id": "m9d25",
     "category": "defense",
     "difficulty": "fácil",
-    "title": "Interposición Correcta",
+    "title": "Interposición",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -487,16 +438,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Be6"
     ],
-    "hint": "Usa tu alfil para tapar el campo de acción de la torre blanca.",
+    "hint": "Mete una ficha en medio.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d7",
+    "id": "m9d26",
     "category": "defense",
     "difficulty": "fácil",
-    "title": "Reforzar la Defensa",
+    "title": "Doble Defensa",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -504,135 +455,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Rfc8"
     ],
-    "hint": "Trae otra pieza para consolidar tu posición trasera.",
+    "hint": "Acumula torres.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d8",
+    "id": "m9d27",
     "category": "defense",
-    "difficulty": "medio",
-    "title": "Eliminación Directa",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "1k1r4/ppp5/8/4R3/3Q4/8/8/1K2R3 b - - 0 1",
-    "sequence": [
-      "Qxd4"
-    ],
-    "hint": "Captura la dama atacante para evitar cualquier combinación.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d9",
-    "category": "defense",
-    "difficulty": "medio",
-    "title": "Táctica Inversa",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "2r1r1k1/pp3ppp/8/3R4/8/5Q2/PP3PPP/K1q1R3 b - - 0 1",
-    "sequence": [
-      "Rxe1+"
-    ],
-    "hint": "Las negras están a punto de dar mate, hazlo tú primero!",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d10",
-    "category": "defense",
-    "difficulty": "medio",
-    "title": "Contragolpe Central",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "4rrk1/pp3p1p/2p3p1/2P1n3/1P6/P3R1P1/1q2NPPP/3R1QK1 b - - 0 1",
-    "sequence": [
-      "Nf3+"
-    ],
-    "hint": "Da un jaque que altere completamente el curso del juego.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d11",
-    "category": "defense",
-    "difficulty": "medio",
-    "title": "Liberación de Presión",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "r1br2k1/p4ppp/1pn1pq2/3P4/8/2P1BQ2/P3NPPP/R4RK1 b - - 0 1",
-    "sequence": [
-      "exd5"
-    ],
-    "hint": "Captura el peón central para darle respiro a tus piezas.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d12",
-    "category": "defense",
-    "difficulty": "medio",
-    "title": "Cambio de Torres",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "3rr1k1/ppp1qppp/8/3R4/8/1P3Q2/1PP2PPP/3R2K1 b - - 0 1",
-    "sequence": [
-      "Rxd5"
-    ],
-    "hint": "Al cambiar las torres reduces drásticamente la tensión.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d13",
-    "category": "defense",
-    "difficulty": "medio",
-    "title": "Cortando el Pelo",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "k2r4/pppR4/8/8/8/8/8/1K1R4 b - - 0 1",
-    "sequence": [
-      "Rxd7"
-    ],
-    "hint": "Toma la torre avanzada blanca.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d14",
-    "category": "defense",
-    "difficulty": "medio",
-    "title": "Luft de Emergencia",
-    "openingName": "Defensa Estilo Fischer",
-    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
-    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
-    "initialFen": "6k1/p4ppp/8/8/8/2q5/P4PPP/3R2K1 b - - 0 1",
-    "sequence": [
-      "h6"
-    ],
-    "hint": "Debes darle una casilla de escape a tu rey urgentemente.",
-    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
-    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
-    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
-  },
-  {
-    "id": "m9d15",
-    "category": "defense",
-    "difficulty": "difícil",
-    "title": "El Error de Cálculo Blanco",
+    "difficulty": "fácil",
+    "title": "Fallo del Blanco",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -640,16 +472,135 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Rxd1#"
     ],
-    "hint": "Las blancas fallaron, da mate inmediatamente.",
+    "hint": "Aprovecha.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d16",
+    "id": "m9d28",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Contraataque de Torre",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "2qrr1k1/pp3ppp/8/3R4/8/5Q2/PP3PPP/K3R3 b - - 0 1",
+    "sequence": [
+      "Rxe1+"
+    ],
+    "hint": "No hay nada mejor que golpear.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d29",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Bloqueo Inesperado",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "4rrk1/pp3p1p/2p3p1/2P1n3/1P6/P3R1P1/1q2NPPP/3R1QK1 b - - 0 1",
+    "sequence": [
+      "Nf3+"
+    ],
+    "hint": "Abre la caja.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d30",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Interrupción Central",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "r1br2k1/p4ppp/1pn1pq2/3P4/8/2P1BQ2/P3NPPP/R4RK1 b - - 0 1",
+    "sequence": [
+      "exd5"
+    ],
+    "hint": "Limpia al peón.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d31",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Despeje Diagonal",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "3rr1k1/ppp1qppp/8/3R4/8/1P3Q2/1PP2PPP/3R2K1 b - - 0 1",
+    "sequence": [
+      "Rxd5"
+    ],
+    "hint": "Intercambio seguro.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d32",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Torres Gemelas Def.",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "k2r4/pppR4/8/8/8/8/8/1K1R4 b - - 0 1",
+    "sequence": [
+      "Rxd7"
+    ],
+    "hint": "Corta la amenaza.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d33",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Luft Crítico",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "6k1/p4ppp/8/8/8/2q5/P4PPP/3R2K1 b - - 0 1",
+    "sequence": [
+      "h6"
+    ],
+    "hint": "Escapa urgentemente.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d34",
+    "category": "defense",
+    "difficulty": "medio",
+    "title": "Captura Inmediata",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "4r1k1/5ppp/8/4Q3/8/8/8/1K2R3 b - - 0 1",
+    "sequence": [
+      "Rxe5"
+    ],
+    "hint": "Deshabilita.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d35",
     "category": "defense",
     "difficulty": "difícil",
-    "title": "Seguridad Ante Todo",
+    "title": "A Salvo",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -657,16 +608,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "O-O"
     ],
-    "hint": "Enrócate de inmediato para salvaguardar tu monarca.",
+    "hint": "Enrócate mágicamente.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d17",
+    "id": "m9d36",
     "category": "defense",
     "difficulty": "difícil",
-    "title": "Peón Salvador",
+    "title": "Peón Muro",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -674,16 +625,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "f6"
     ],
-    "hint": "Mueve el peón \"f\" para crear un escape lateral de g7 o e7.",
+    "hint": "Peón defensor vital.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d18",
+    "id": "m9d37",
     "category": "defense",
     "difficulty": "difícil",
-    "title": "Desarrollo Activo",
+    "title": "Caballo Muralla",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -691,16 +642,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Nc6"
     ],
-    "hint": "Desarrolla el caballo impidiendo futuros ataques.",
+    "hint": "Cierra filas de forma activa.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d19",
+    "id": "m9d38",
     "category": "defense",
     "difficulty": "difícil",
-    "title": "Simplificación Estratégica",
+    "title": "Simplifica",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -708,16 +659,16 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Qxd1+"
     ],
-    "hint": "Cambiar damas alivia cualquier ataque prematuro.",
+    "hint": "Intercambio seguro en apertura.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   },
   {
-    "id": "m9d20",
+    "id": "m9d39",
     "category": "defense",
     "difficulty": "difícil",
-    "title": "Reubicación y Defensa",
+    "title": "Vuelo del Caballo",
     "openingName": "Defensa Estilo Fischer",
     "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
     "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
@@ -725,11 +676,27 @@ export const defenseLessons: ExerciseLesson[] = [
     "sequence": [
       "Nh5"
     ],
-    "hint": "Reposiciona el caballo para presionar el alfil blanco.",
+    "hint": "Crea una barrera externa.",
+    "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
+    "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
+    "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
+  },
+  {
+    "id": "m9d40",
+    "category": "defense",
+    "difficulty": "difícil",
+    "title": "Paso Ciego",
+    "openingName": "Defensa Estilo Fischer",
+    "description": "Basado estrictamente en los escenarios didácticos del libro \"Bobby Fischer Teaches Chess\".",
+    "instruction": "Encuentra la secuencia correcta basada en los patrones del libro.",
+    "initialFen": "r1bqr1k1/ppp1bppp/2n1pn2/3p4/2pP1B2/P1P1PN2/1P1NBPPP/2RQ1RK1 b - - 0 1",
+    "sequence": [
+      "Nh5"
+    ],
+    "hint": "Retrocede seguro.",
     "successMessage": "¡Perfecto! Demostraste comprensión total del patrón de Fischer.",
     "wrongMoveExplanation": "Ese movimiento no cumple con el rigor de la lección del pasillo.",
     "reference": "Bobby Fischer Teaches Chess (Cápitulos Selectos)"
   }
 ];
-
 export const module9Lessons = [...attackLessons, ...defenseLessons];
